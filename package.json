@@ -1,0 +1,26 @@
+{
+  "name": "update-manager",
+  "version": "1.0.0",
+  "description": "Unified Patch Management Application",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhigh1/Update-Manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhigh1/Update-Manager/issues"
+  },
+  "homepage": "https://github.com/mhigh1/Update-Manager#readme"
+}
