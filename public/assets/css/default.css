@@ -1,0 +1,15 @@
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+input#globalSearch {
+    border-radius: 25px;
+    border: none;
+    height: 35px;
+    padding-left: 38px;
+}
+
+#searchBar .fa-search {
+    position: absolute;
+    top:10px; 
+    left:30px;
+    color: gray;
+}
