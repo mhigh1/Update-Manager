@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login</title>
+    <!-- TEMPORARY STYLE BLOCK -->
+    <style type="text/css">
+        body {
+            background-color:lightgray; 
+            margin: 0;
+        }
+
+        a {
+            color: white; 
+            padding: 0px 10px;
+        }
+
+        #footerLinks {
+            color: white;
+            font-size: .80em;
+            height: 25px;
+            line-height: 25px;
+            text-align: end;
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,.6);
+        }
+
+        #loginDialog {
+            margin: auto;
+            position: relative;
+            max-width: 440px;
+            width: calc(100% - 40px);
+            padding: 44px;
+            margin-bottom: 28px;
+            background-color: #fff;
+            min-width: 320px;
+            min-height: 338px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,.2);
+        }
+
+        .middle {
+            display: table-cell;
+            vertical-align: middle;
+            box-sizing: border-box;
+        }
+        .outer {
+            display: table;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #loginForm {
+            width:100%;
+            text-align: left;
+            font-size: .85em;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="outer">
+        <div class="middle">
+            <div id="loginDialog">
+                <form id="loginForm">
+                    <img src="..." width="250px" height="50px" class="mb-2" />
+                    <h3>Sign in</h3>
+                    <div class="form-group mt-3">
+                        <label for="username" class="sr-only"></label>
+                        <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username" style="height: 35px; border:none; border-bottom: 2px solid gray;">
+                    </div>
+                        <button type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footerLinks">
+            <span style="padding-right:10px;">&copy2019 General Electric</span>
+            <a href="#">Terms of use</a>
+            <a href="#">Privacy & cookies</a>
+            <a href="#">...</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
