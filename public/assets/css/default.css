@@ -13,3 +13,7 @@ input#globalSearch {
     left:30px;
     color: gray;
 }
+/* FIX for Bootstrap Dropdown */
+.navbar-nav .dropdown-menu {
+    position: absolute!important;
+}
