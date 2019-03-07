@@ -1,27 +1,25 @@
 {
-  "name": "update-manager",
+  "name": "node-passport-sequelize",
   "version": "1.0.0",
-  "description": "Unified Patch Management Application",
+  "description": "",
   "main": "server.js",
-  "dependencies": {
-    "express": "^4.16.4",
-    "mysql2": "^1.6.4",
-    "path": "^0.12.7",
-    "sequelize": "^4.42.0"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mhigh1/Update-Manager.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mhigh1/Update-Manager/issues"
-  },
-  "homepage": "https://github.com/mhigh1/Update-Manager#readme"
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mysql2": "^1.5.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.35.1",
+    "sequelize-cli": "^4.0.0"
+  }
 }
