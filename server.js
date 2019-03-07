@@ -1,33 +1,62 @@
-// require express and path
-const express = require('express');
 const path = require('path');
-
+const express = require('express');
 const app = express();
+const passport = require('passport');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const env = require('dotenv').load();
+const exphbs = require('express-handlebars');
 
-// defining port
-const PORT = process.env.PORT || 3000;
+// BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-//syncwith database
-const db = require('./models');
+// Passport
+app.use(
+  session({ secret: 'rHUyjs6RmVOD06OdOTsVAyUUCxVXaWci', resave: true, saveUninitialized: true })
+); // session secret
+app.use(passport.initialize());
+app.use(passport.session());
 
+// Handlebars
+const viewsPath = path.join(__dirname, 'views');
+const layoutsPath = path.join(viewsPath, 'layouts');
+const partialsPath = path.join(viewsPath, 'partials');
+app.set('views', viewsPath);
 
-//seting up server to parse request body
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+const exphbsConfig = exphbs.create({
+  defaultLayout: 'main',
+  layoutsDir: layoutsPath,
+  partialsDir: [partialsPath],
+  extname: '.hbs'
+});
 
-// server setup the public directory for static assets usage
-app.use(express.static(path.join(__dirname, './public')));
+app.engine('hbs', exphbsConfig.engine);
+app.set('view engine', '.hbs');
+
+// Models
+const models = require('./models');
+
+// Express static assets
+app.use(express.static("public"));
 
 // Routes
-require('./routes/api-routes')(app);
-require('./routes/html-routes')(app);
+const authRoute = require('./routes/auth.js')(app, passport);
 
-//Syncs the db
-db.sequelize.sync().then(function () {
+// Load passport strategies
+require('./config/passport/passport.js')(passport, models.user);
 
-})
+// Sync Database
+models.sequelize
+  .sync()
+  .then(function() {
+    console.log('Database Connected');
 
-//Starting server on the predefined Port
-app.listen(PORT, function () {
-    console.log(`App is now listening on PORT ${PORT}`)
-});
+    app.listen(3000, function(err) {
+      if (!err) console.log('Connected at http://localhost:3000');
+      else console.log(err);
+    });
+  })
+  .catch(function(err) {
+    console.log(err, 'Error on Database Sync. Please try again!');
+  });
