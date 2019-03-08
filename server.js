@@ -4,7 +4,7 @@ const app = express();
 const passport = require('passport');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const env = require('dotenv').load();
+require('dotenv').config(); 
 const exphbs = require('express-handlebars');
 
 // BodyParser
