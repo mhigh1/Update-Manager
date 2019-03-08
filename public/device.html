@@ -11,11 +11,13 @@
     <style type="text/css">
         ul#deviceTabs {
             padding-bottom: 2px;
+            height: 30px;
         }
         .tab-link, .tab-link:hover {
             color: #212529;
             text-decoration: none;
             padding: 0px 8px;
+            padding-bottom: 4px;
         }
         .tab-link.active {
             border-bottom: 4px solid #00B5E2;
@@ -224,7 +226,7 @@
                     <div class="col">
                         <div class="card-deck">
                             <div class="card">
-                               <div class="card-header"  style="border-bottom: none; background-color: white; font-size: 1.35em; font-weight: 100; padding-bottom: 0px;">Updates</div>
+                               <div class="card-header" style="background-color: #ffffff; font-size: 1.35rem; font-weight: 100; padding:.50rem .75rem">Updates</div>
                                 <div class="card-body">
                                     <div>
                                         <div style="border-left: 5px solid #009e49; margin-bottom: 6px;">
@@ -267,16 +269,28 @@
                                 </div>
                             </div>
                             <div class="card">
-                                <span style="padding: .75rem 1.25rem 0 .75rem; font-weight: 100; font-size: 1.35em">Compliance</span>
+                                <div class="card-header" style="background-color: #ffffff; font-size: 1.35rem; font-weight: 100; padding:.50rem .75rem">Compliance</div>
                                 <div class="card-body text-center">
-                                    <span style="font-size: 100px;">A+</span>
+                                    <div class="row">
+                                        <div class="col-5" style="border-right: 1px solid rgba(0,0,0,.125);"><span style="font-size: 6rem; line-height: 6rem">A+</span></div>
+                                        <div class="col-7 text-left">
+                                            <ul style="list-style-type: none; font-size: .95rem; padding-left: 0;">
+                                                <li>0 critical updates Needed</li>
+                                                <li>0 security update Needed</li>
+                                                <li>No Core-OS Vulnerabilities</li>
+                                                <li>0 non-compliant baselines</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card">
-                                <!-- FUTURE FEATURE -->
+                                <div class="card-header" style="background-color: #ffffff; font-size: 1.35rem; font-weight: 100; padding:.50rem .75rem">Remediation Status</div>
+                                <div class="card-body text-center"></div>
                             </div>
                             <div class="card">
-                                <!-- FUTURE FEATURE -->
+                                <div class="card-header" style="background-color: #ffffff; font-size: 1.35rem; font-weight: 100; padding:.50rem .75rem">Coming Soon</div>
+                                <div class="card-body text-center"></div>
                             </div>
                         </div>
                     </div>
@@ -284,8 +298,8 @@
                 <div class="row mb-3">
                     <div class="col">
                         <div class="card" style="border:none;">
-                            <div class="card-header p-1 pl-2 bg-white" style="border: none;">
-                                <span style="font-weight: 100; font-size: 1.35rem">Updates</span>
+                            <div class="card-header p-1 bg-white" style="border: none;">
+                                <span style="font-weight: 100; font-size: 1.35rem">Update Details</span>
                             </div>
                             <div class="card-body" style="overflow: hidden; border: 1px solid rgba(0,0,0,.125); border-radius: .25rem;">
                                 <table id="sampleTable" class="table table-sm table-striped">
@@ -300,7 +314,7 @@
                                     <tbody>
                                         <tr>
                                             <td>KB2978120</td>
-                                            <td>Update 1</td>
+                                            <td>Security Update for Microsoft .NET Framework 3.5.1</td>
                                             <td>MS14-072</td>
                                             <td>Security Update</td>
                                             <td>Installed</td>
@@ -308,7 +322,7 @@
                                         </tr>
                                         <tr>
                                             <td>KB3035126</td>
-                                            <td>Update 2</td>
+                                            <td>Security Update for Windows Server 2008</td>
                                             <td>MS15-041</td>
                                             <td>Security Update</td>
                                             <td>Installed</td>
@@ -316,7 +330,7 @@
                                         </tr>
                                         <tr>
                                             <td>KB4487078</td>
-                                            <td>Update 3</td>
+                                            <td>2019-02 Security and Quality Rollup for .NET Framework 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 for Server 2008 R2 (x64)</td>
                                             <td>NA</td>
                                             <td>.NET</td>
                                             <td>Installed</td>
