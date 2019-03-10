@@ -33,7 +33,7 @@
             background-color: rgba(0,0,0,.6);
         }
 
-        #loginDialog {
+        #loginLightbox {
             margin: auto;
             position: relative;
             max-width: 440px;
@@ -64,6 +64,120 @@
             text-align: left;
             font-size: .85em;
         }
+
+        .animate {
+            animation-duration: .25s;
+            -webkit-animation-duration: .25s;
+            animation-timing-function: cubic-bezier(.5,0,.5,1);
+            -webkit-animation-timing-function: cubic-bezier(.5,0,.5,1);
+            /* animation-fill-mode: forwards; */
+        }
+
+        .animate.slide-in-left {
+            animation-name: show-from-left;
+            -webkit-animation-name: show-from-left;
+        }
+        .animate.slide-out-left {
+            animation-name: hide-to-left;
+            -webkit-animation-name: hide-to-left;
+        }
+
+        .animate.slide-in-right {
+            animation-name: show-from-right;
+            -webkit-animation-name: show-from-right;
+        }
+        .animate.slide-out-right {
+            animation-name: hide-to-right;
+            -webkit-animation-name: hide-to-right;
+        }
+
+         @-webkit-keyframes show-from-left {
+            0% {
+               opacity: 0;
+               -webkit-transform: translateX(-200px);
+            }
+            100% {
+               opacity: 1;
+               -webkit-transform: translateX(0);
+            }
+         }
+         
+         @keyframes show-from-left {
+            0% {
+               opacity: 0;
+               transform: translateX(-200px);
+            }
+            100% {
+               opacity: 1;
+               transform: translateX(0);
+            }
+         }
+
+         @-webkit-keyframes hide-to-left {
+            0% {
+               opacity: 1;
+               -webkit-transform: translateX(0);
+            }
+            100% {
+               opacity: 0;
+               -webkit-transform: translateX(-200px);
+            }
+         }
+         
+         @keyframes hide-to-left {
+            0% {
+               opacity: 1;
+               transform: translateX(0);
+            }
+            100% {
+               opacity: 0;
+               transform: translateX(-200px);
+            }
+         }
+
+         @-webkit-keyframes show-from-right {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(200px);
+            }
+            100% {
+               opacity: 1;
+               -webkit-transform: translateX(0);
+            }
+         }
+         
+         @keyframes show-from-right {
+            0% {
+               opacity: 0;
+               transform: translateX(200px);
+            }
+            100% {
+               opacity: 1;
+               transform: translateX(0);
+            }
+         }
+
+         @-webkit-keyframes hide-to-right {
+            0% {
+               opacity: 1;
+               -webkit-transform: translateX(0);
+            }
+            100% {
+               opacity: 0;
+               -webkit-transform: translateX(200px);
+            }
+         }
+         
+         @keyframes hide-to-right {
+            0% {
+               opacity: 1;
+               transform: translateX(0);
+            }
+            100% {
+               opacity: 0;
+               transform: translateX(200px);
+            }
+         }
     </style>
 
 
@@ -71,15 +185,16 @@
 <body>
     <div class="outer">
         <div class="middle">
-            <div id="loginDialog">
+            <div id="loginLightbox">
                 <form id="loginForm">
-                    <img src="..." width="250px" height="50px" class="mb-2" />
-                    <h3>Sign in</h3>
-                    <div class="form-group mt-3">
-                        <label for="username" class="sr-only"></label>
-                        <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username" style="height: 35px; border:none; border-bottom: 2px solid gray;">
+                    <div data-viewid="1" class="animate slide-in-right">
+                        <h3>Sign in</h3>
+                        <div class="form-group mt-3">
+                            <label for="username" class="sr-only"></label>
+                            <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username" style="height: 35px; border:none; border-bottom: 2px solid gray;">
+                        </div>
+                            <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
                     </div>
-                        <button type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
                 </form>
             </div>
         </div>
@@ -95,5 +210,34 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $('#loginForm').on('click', '#btnNext', function() {
+            $("div[data-viewid='1']").removeClass('slide-in-right');
+            $("div[data-viewid='1']").addClass('slide-out-left');
+            $("div[data-viewid='1']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
+                this.remove(); 
+                $("#loginForm").html(`<div data-viewid="2" class="animate slide-in-right">PAGE 2<button id="btnBack" type="button" class="btn btn-primary w-25 float-right mt-4">Back</button></div>`);
+                });
+            
+        });
+        $(document).ready( function() {
+            $('#loginForm').on('click','#btnBack', function() {
+                console.log('click');
+                $("div[data-viewid='2']").removeClass('slide-in-right');
+                $("div[data-viewid='2']").addClass('slide-out-right');
+                $("div[data-viewid='2']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
+                    this.remove(); 
+                    $("#loginForm").html(`<div data-viewid="1" class="animate slide-in-left">
+                        <h3>Sign in</h3>
+                        <div class="form-group mt-3">
+                            <label for="username" class="sr-only"></label>
+                            <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username" style="height: 35px; border:none; border-bottom: 2px solid gray;">
+                        </div>
+                            <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
+                    </div>`);
+                }); 
+            });
+        });
+    </script>
 </body>
 </html>
