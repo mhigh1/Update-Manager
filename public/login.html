@@ -9,8 +9,8 @@
     <!-- TEMPORARY STYLE BLOCK -->
     <style type="text/css">
         body {
-            background-color:lightgray; 
-            margin: 0;
+            background-color: #f2f2f2;
+            margin: 0;         
         }
 
         a {
@@ -31,6 +31,19 @@
             bottom: 0;
             width: 100%;
             background-color: rgba(0,0,0,.6);
+        }
+
+        .background {
+            position: fixed;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background: url("./assets/images/ge-boston.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            filter: blur(5px);
         }
 
         #loginLightbox {
@@ -183,6 +196,7 @@
 
 </head>
 <body>
+    <div class="background"></div>
     <div class="outer">
         <div class="middle">
             <div id="loginLightbox">
@@ -211,18 +225,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        $('#loginForm').on('click', '#btnNext', function() {
-            $("div[data-viewid='1']").removeClass('slide-in-right');
-            $("div[data-viewid='1']").addClass('slide-out-left');
-            $("div[data-viewid='1']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
-                this.remove(); 
-                $("#loginForm").html(`<div data-viewid="2" class="animate slide-in-right">PAGE 2<button id="btnBack" type="button" class="btn btn-primary w-25 float-right mt-4">Back</button></div>`);
-                });
-            
-        });
+        
         $(document).ready( function() {
+            $('#loginForm').on('click', '#btnNext', function() {
+                $("div[data-viewid='1']").removeClass('slide-in-right');
+                $("div[data-viewid='1']").addClass('slide-out-left');
+                $("div[data-viewid='1']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
+                    this.remove(); 
+                    $("#loginForm").html(`<div data-viewid="2" class="animate slide-in-right">PAGE 2<button id="btnBack" type="button" class="btn btn-primary w-25 float-right mt-4">Back</button></div>`);
+                });
+            });
+
             $('#loginForm').on('click','#btnBack', function() {
-                console.log('click');
                 $("div[data-viewid='2']").removeClass('slide-in-right');
                 $("div[data-viewid='2']").addClass('slide-out-right');
                 $("div[data-viewid='2']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
