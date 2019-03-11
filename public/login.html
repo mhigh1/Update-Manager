@@ -43,7 +43,7 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            filter: blur(5px);
+            /* filter: blur(5px); */
         }
 
         #loginLightbox {
@@ -77,13 +77,21 @@
             text-align: left;
             font-size: .85em;
         }
+        input {
+            height: 35px;  
+            border: none;
+            border-bottom: 2px solid gray;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #0067b8;
+        }
 
         .animate {
             animation-duration: .25s;
             -webkit-animation-duration: .25s;
             animation-timing-function: cubic-bezier(.5,0,.5,1);
             -webkit-animation-timing-function: cubic-bezier(.5,0,.5,1);
-            /* animation-fill-mode: forwards; */
         }
 
         .animate.slide-in-left {
@@ -200,16 +208,14 @@
     <div class="outer">
         <div class="middle">
             <div id="loginLightbox">
-                <form id="loginForm">
                     <div data-viewid="1" class="animate slide-in-right">
                         <h3>Sign in</h3>
                         <div class="form-group mt-3">
                             <label for="username" class="sr-only"></label>
-                            <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username" style="height: 35px; border:none; border-bottom: 2px solid gray;">
+                            <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username">
                         </div>
-                            <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
+                        <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
                     </div>
-                </form>
             </div>
         </div>
     </div>
@@ -227,21 +233,21 @@
     <script type="text/javascript">
         
         $(document).ready( function() {
-            $('#loginForm').on('click', '#btnNext', function() {
+            $('#loginLightbox').on('click', '#btnNext', function() {
                 $("div[data-viewid='1']").removeClass('slide-in-right');
                 $("div[data-viewid='1']").addClass('slide-out-left');
                 $("div[data-viewid='1']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
                     this.remove(); 
-                    $("#loginForm").html(`<div data-viewid="2" class="animate slide-in-right">PAGE 2<button id="btnBack" type="button" class="btn btn-primary w-25 float-right mt-4">Back</button></div>`);
+                    $("#loginLightbox").html(`<div data-viewid="2" class="animate slide-in-right">PAGE 2<button id="btnBack" type="button" class="btn btn-primary w-25 float-right mt-4">Back</button></div>`);
                 });
             });
 
-            $('#loginForm').on('click','#btnBack', function() {
+            $('#loginLightbox').on('click','#btnBack', function() {
                 $("div[data-viewid='2']").removeClass('slide-in-right');
                 $("div[data-viewid='2']").addClass('slide-out-right');
                 $("div[data-viewid='2']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
                     this.remove(); 
-                    $("#loginForm").html(`<div data-viewid="1" class="animate slide-in-left">
+                    $("#loginLightbox").html(`<div data-viewid="1" class="animate slide-in-left">
                         <h3>Sign in</h3>
                         <div class="form-group mt-3">
                             <label for="username" class="sr-only"></label>
