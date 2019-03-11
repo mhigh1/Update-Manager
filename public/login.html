@@ -8,22 +8,20 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/login.css">
     <title>Login</title>
-
-
 </head>
 <body>
     <div class="background"></div>
     <div class="outer">
         <div class="middle">
             <div id="loginLightbox">
-                    <div data-viewid="1" class="animate slide-in-right">
-                        <h3>Sign in</h3>
-                        <div class="form-group mt-3">
-                            <label for="username" class="sr-only"></label>
-                            <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username">
-                        </div>
-                        <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
+                <div data-viewid="1" class="animate slide-in-right">
+                    <h3>Sign in</h3>
+                    <div class="form-group mt-3">
+                        <label for="username" class="sr-only"></label>
+                        <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username">
                     </div>
+                    <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
+                </div>
             </div>
         </div>
     </div>
@@ -38,42 +36,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        
-        $(document).ready( function() {
-            $('#loginLightbox').on('click', '#btnNext', function() {
-                $("div[data-viewid='1']").removeClass('slide-in-right');
-                $("div[data-viewid='1']").addClass('slide-out-left');
-                $("div[data-viewid='1']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
-                    this.remove(); 
-                    $("#loginLightbox").html(`<div data-viewid="2" class="animate slide-in-right">
-                        <div id="btnBack" class="identity"><i class="fas fa-arrow-left mr-1"></i>USERNAME</div>
-                        <div class="text-title">Enter password</div>
-                        <div class="form-group mt-3">
-                            <label for="password" class="sr-only"></label>
-                            <input name="password" type="password" class="w-100 px-2" placeholder="Password">
-                        </div>
-                        <button id="btnLogin" type="button" class="btn btn-primary w-25 float-right mt-4">Sign in</button>
-                    </div>`);
-                });
-            });
-
-            $('#loginLightbox').on('click','#btnBack', function() {
-                $("div[data-viewid='2']").removeClass('slide-in-right');
-                $("div[data-viewid='2']").addClass('slide-out-right');
-                $("div[data-viewid='2']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
-                    this.remove(); 
-                    $("#loginLightbox").html(`<div data-viewid="1" class="animate slide-in-left">
-                        <div class="text-title">Sign in</div>
-                        <div class="form-group mt-3">
-                            <label for="username" class="sr-only"></label>
-                            <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username">
-                        </div>
-                            <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
-                    </div>`);
-                }); 
-            });
-        });
-    </script>
+    <script src="./assets/js/login.js"></script>
 </body>
 </html>
