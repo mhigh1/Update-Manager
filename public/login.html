@@ -6,217 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/login.css">
     <title>Login</title>
-    <!-- TEMPORARY STYLE BLOCK -->
-    <style type="text/css">
-        body {
-            background-color: #f2f2f2;
-            margin: 0;         
-        }
-
-        a {
-            color: white; 
-            padding: 0px 10px;
-        }
-
-        #footerLinks {
-            color: white;
-            font-size: .80em;
-            height: 25px;
-            line-height: 25px;
-            text-align: end;
-        }
-
-        #footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: rgba(0,0,0,.6);
-        }
-
-        .background {
-            position: fixed;
-            top:0;
-            width: 100%;
-            height: 100%;
-            background: url("./assets/images/ge-boston.jpg") no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            /* filter: blur(5px); */
-        }
-
-        #loginLightbox {
-            margin: auto;
-            position: relative;
-            max-width: 440px;
-            width: calc(100% - 40px);
-            padding: 44px;
-            margin-bottom: 28px;
-            background-color: #fff;
-            min-width: 320px;
-            min-height: 338px;
-            overflow: hidden;
-            box-shadow: 0 2px 6px rgba(0,0,0,.2);
-        }
-
-        .middle {
-            display: table-cell;
-            vertical-align: middle;
-            box-sizing: border-box;
-        }
-        .outer {
-            display: table;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-        }
-
-        #loginForm {
-            width:100%;
-            text-align: left;
-            font-size: .85em;
-        }
-        input {
-            height: 35px;  
-            border: none;
-            border-bottom: 2px solid gray;
-        }
-        input[type="text"]:focus,
-        input[type="password"]:focus  {
-            outline: none;
-            border-color: #0067b8;
-        }
-
-        .text-title {
-            color: #404040;
-            font-size: 1.5rem;
-            font-weight: 600;
-            padding: 0;
-            margin-top:20px;
-            margin-bottom: 12px;
-        }
-        .identity {
-            line-height: 24px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .animate {
-            animation-duration: .25s;
-            -webkit-animation-duration: .25s;
-            animation-timing-function: cubic-bezier(.5,0,.5,1);
-            -webkit-animation-timing-function: cubic-bezier(.5,0,.5,1);
-        }
-
-        .animate.slide-in-left {
-            animation-name: show-from-left;
-            -webkit-animation-name: show-from-left;
-        }
-        .animate.slide-out-left {
-            animation-name: hide-to-left;
-            -webkit-animation-name: hide-to-left;
-        }
-
-        .animate.slide-in-right {
-            animation-name: show-from-right;
-            -webkit-animation-name: show-from-right;
-        }
-        .animate.slide-out-right {
-            animation-name: hide-to-right;
-            -webkit-animation-name: hide-to-right;
-        }
-
-         @-webkit-keyframes show-from-left {
-            0% {
-               opacity: 0;
-               -webkit-transform: translateX(-200px);
-            }
-            100% {
-               opacity: 1;
-               -webkit-transform: translateX(0);
-            }
-         }
-         
-         @keyframes show-from-left {
-            0% {
-               opacity: 0;
-               transform: translateX(-200px);
-            }
-            100% {
-               opacity: 1;
-               transform: translateX(0);
-            }
-         }
-
-         @-webkit-keyframes hide-to-left {
-            0% {
-               opacity: 1;
-               -webkit-transform: translateX(0);
-            }
-            100% {
-               opacity: 0;
-               -webkit-transform: translateX(-200px);
-            }
-         }
-         
-         @keyframes hide-to-left {
-            0% {
-               opacity: 1;
-               transform: translateX(0);
-            }
-            100% {
-               opacity: 0;
-               transform: translateX(-200px);
-            }
-         }
-
-         @-webkit-keyframes show-from-right {
-            0% {
-                opacity: 0;
-                -webkit-transform: translateX(200px);
-            }
-            100% {
-               opacity: 1;
-               -webkit-transform: translateX(0);
-            }
-         }
-         
-         @keyframes show-from-right {
-            0% {
-               opacity: 0;
-               transform: translateX(200px);
-            }
-            100% {
-               opacity: 1;
-               transform: translateX(0);
-            }
-         }
-
-         @-webkit-keyframes hide-to-right {
-            0% {
-               opacity: 1;
-               -webkit-transform: translateX(0);
-            }
-            100% {
-               opacity: 0;
-               -webkit-transform: translateX(200px);
-            }
-         }
-         
-         @keyframes hide-to-right {
-            0% {
-               opacity: 1;
-               transform: translateX(0);
-            }
-            100% {
-               opacity: 0;
-               transform: translateX(200px);
-            }
-         }
-    </style>
 
 
 </head>
@@ -238,7 +29,7 @@
     </div>
     <div id="footer">
         <div id="footerLinks">
-            <span style="padding-right:10px;">&copy2019 General Electric</span>
+            <span class="copyright">&copy2019 General Electric</span>
             <a href="#">Terms of use</a>
             <a href="#">Privacy & cookies</a>
             <a href="#">...</a>
@@ -256,7 +47,7 @@
                 $("div[data-viewid='1']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
                     this.remove(); 
                     $("#loginLightbox").html(`<div data-viewid="2" class="animate slide-in-right">
-                        <div id="btnBack" class="identity" style="color: #6c757d; cursor: pointer"><i class="fas fa-arrow-left mr-1"></i>USERNAME</div>
+                        <div id="btnBack" class="identity"><i class="fas fa-arrow-left mr-1"></i>USERNAME</div>
                         <div class="text-title">Enter password</div>
                         <div class="form-group mt-3">
                             <label for="password" class="sr-only"></label>
