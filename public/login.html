@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Login</title>
     <!-- TEMPORARY STYLE BLOCK -->
     <style type="text/css">
@@ -82,9 +83,25 @@
             border: none;
             border-bottom: 2px solid gray;
         }
-        input[type="text"]:focus {
+        input[type="text"]:focus,
+        input[type="password"]:focus  {
             outline: none;
             border-color: #0067b8;
+        }
+
+        .text-title {
+            color: #404040;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 0;
+            margin-top:20px;
+            margin-bottom: 12px;
+        }
+        .identity {
+            line-height: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .animate {
@@ -238,7 +255,15 @@
                 $("div[data-viewid='1']").addClass('slide-out-left');
                 $("div[data-viewid='1']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
                     this.remove(); 
-                    $("#loginLightbox").html(`<div data-viewid="2" class="animate slide-in-right">PAGE 2<button id="btnBack" type="button" class="btn btn-primary w-25 float-right mt-4">Back</button></div>`);
+                    $("#loginLightbox").html(`<div data-viewid="2" class="animate slide-in-right">
+                        <div id="btnBack" class="identity" style="color: #6c757d; cursor: pointer"><i class="fas fa-arrow-left mr-1"></i>USERNAME</div>
+                        <div class="text-title">Enter password</div>
+                        <div class="form-group mt-3">
+                            <label for="password" class="sr-only"></label>
+                            <input name="password" type="password" class="w-100 px-2" placeholder="Password">
+                        </div>
+                        <button id="btnLogin" type="button" class="btn btn-primary w-25 float-right mt-4">Sign in</button>
+                    </div>`);
                 });
             });
 
@@ -248,10 +273,10 @@
                 $("div[data-viewid='2']").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) { 
                     this.remove(); 
                     $("#loginLightbox").html(`<div data-viewid="1" class="animate slide-in-left">
-                        <h3>Sign in</h3>
+                        <div class="text-title">Sign in</div>
                         <div class="form-group mt-3">
                             <label for="username" class="sr-only"></label>
-                            <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username" style="height: 35px; border:none; border-bottom: 2px solid gray;">
+                            <input name="username" type="text" class="w-100 px-2" placeholder="Email or Username">
                         </div>
                             <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
                     </div>`);
