@@ -1,0 +1,219 @@
+body {
+    background-color: #f2f2f2;
+    margin: 0;         
+}
+
+a {
+    color: white; 
+    padding: 0px 10px;
+}
+
+#footerLinks {
+    color: white;
+    font-size: .80em;
+    height: 25px;
+    line-height: 25px;
+    text-align: end;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+}
+
+.copyright {
+    padding-right:10px;
+}
+
+.background {
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/ge-boston.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#loginLightbox {
+    position: relative;
+    margin: auto;
+    margin-bottom: 28px;
+    padding: 44px;
+    width: calc(100% - 40px);
+    min-width: 320px;
+    min-height: 338px;
+    max-width: 440px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    overflow: hidden;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#loginForm {
+    width:100%;
+    text-align: left;
+    font-size: .85em;
+}
+
+input {
+    height: 35px;  
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus  {
+    outline: none;
+    border-color: #0067b8;
+}
+
+.text-title {
+    color: #404040;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0;
+    margin-top:20px;
+    margin-bottom: 12px;
+}
+
+.identity {
+    color: #6c757d;
+    line-height: 24px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.animate {
+    animation-duration: .25s;
+    -webkit-animation-duration: .25s;
+    animation-timing-function: cubic-bezier(.5,0,.5,1);
+    -webkit-animation-timing-function: cubic-bezier(.5,0,.5,1);
+}
+
+.animate.slide-in-left {
+    animation-name: show-from-left;
+    -webkit-animation-name: show-from-left;
+}
+
+.animate.slide-out-left {
+    animation-name: hide-to-left;
+    -webkit-animation-name: hide-to-left;
+}
+
+.animate.slide-in-right {
+    animation-name: show-from-right;
+    -webkit-animation-name: show-from-right;
+}
+
+.animate.slide-out-right {
+    animation-name: hide-to-right;
+    -webkit-animation-name: hide-to-right;
+}
+
+/* Animation Keyframes */
+@-webkit-keyframes show-from-left {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-200px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+         
+@keyframes show-from-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes hide-to-left {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-200px);
+    }
+}
+         
+@keyframes hide-to-left {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+}
+
+@-webkit-keyframes show-from-right {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(200px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+         
+@keyframes show-from-right {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes hide-to-right {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(200px);
+    }
+}
+         
+@keyframes hide-to-right {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
