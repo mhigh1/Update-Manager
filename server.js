@@ -46,6 +46,9 @@ const authRoute = require('./routes/auth.js')(app, passport);
 // Load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
 
+//to be able to show images in view
+app.use(express.static(__dirname+'/public'));
+
 // Sync Database
 models.sequelize
   .sync()

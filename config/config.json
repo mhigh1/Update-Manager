@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "lightforge",
     "port": 3306,
     "database": "valkyrie_db",
     "host": "127.0.0.1",

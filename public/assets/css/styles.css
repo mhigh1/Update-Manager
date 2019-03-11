@@ -1,3 +1,21 @@
 form {
   margin-top: 50px;
 }
+
+input#globalSearch {
+  border-radius: 25px;
+  border: none;
+  height: 35px;
+  padding-left: 38px;
+}
+
+#searchBar .fa-search {
+  position: absolute;
+  top:10px; 
+  left:30px;
+  color: gray;
+}
+/* FIX for Bootstrap Dropdown */
+/* .navbar-nav .dropdown-menu {
+  position: absolute!important;
+} */
