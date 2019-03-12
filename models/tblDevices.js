@@ -13,7 +13,7 @@ module.exports = function (connection, Sequelize) {
         hostName: {
             type: Sequelize.STRING,
             primaryKey: true,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -21,49 +21,49 @@ module.exports = function (connection, Sequelize) {
         fullDomainName: {
             type: Sequelize.STRING,
             primaryKey: true,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         ipAddress: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         lastSyncTime: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         lastReportedStatusTime: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         lastReportedRebootTime: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         effectiveLastDetectionTime: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         lastSyncResult: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }

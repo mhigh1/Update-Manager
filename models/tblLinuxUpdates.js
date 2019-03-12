@@ -13,35 +13,35 @@ module.exports = function (connection, Sequelize) {
         },
         title: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         description: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         severity: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         securityBulletin: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         additionalInfoUrl: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
