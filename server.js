@@ -6,6 +6,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 require('dotenv').config(); 
 const exphbs = require('express-handlebars');
+const hbsHelpers = require('./lib/hbsHelpers');
 
 // BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,7 +26,8 @@ const partialsPath = path.join(viewsPath, 'partials');
 app.set('views', viewsPath);
 
 const exphbsConfig = exphbs.create({
-  defaultLayout: 'main',
+  defaultLayout: 'default',
+  helpers: hbsHelpers, 
   layoutsDir: layoutsPath,
   partialsDir: [partialsPath],
   extname: '.hbs'

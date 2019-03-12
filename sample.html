@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="fill-parent">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Valkyrie</title>
+    <style type="text/css">
+    .app-frame-outer {
+        box-sizing: border-box;
+        width: 100vw;
+        flex: 1 1 auto;
+        height: calc(100% - 56px);
+        /* height: 100%; */
+    }
+    .app-frame-outer .app-frame-inner {
+        margin: 0!important;
+        position: relative;
+        height: 100%;
+    }
+    .fill-parent {
+        height: 100%;
+        width: 100%;
+    }
+    #left-panel {
+        position: absolute; 
+        top: 0px;
+        left: 0px;
+        width: 225px;
+        height: 100%;
+    }
+    #center-pane {
+        position: absolute;
+        top: 0px;
+        width: calc(100% - 228px);
+        height: 100%;
+        left: 228px;
+    }
+
+    </style>
+</head>
+<body class="fill-parent" style="margin:0; background: #f4f4f4;">
+    <div id="app-header">
+
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #314351;">
+                <a class="navbar-brand" href="/">App</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+
+    </div>
+    <div class="app-frame-outer">
+        <div class="app-frame-inner">
+                <div class="container-fluid">
+                    <div id="left-panel" style="background: #fff;"></div>
+                    <div id="center-pane" style="background: #fafafa">
+                        <div class="container-fluid">
+                            CONTENT HERE
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
