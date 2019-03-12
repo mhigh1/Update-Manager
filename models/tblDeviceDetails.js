@@ -12,56 +12,56 @@ module.exports = function (connection, Sequelize) {
         },
         osMajorVersion: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         osMinorVersion: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         osBuildNumber: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         osServicePack: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         osLocale: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         computerMake: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         computerModel: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         biosVersion: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }

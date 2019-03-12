@@ -13,56 +13,56 @@ module.exports = function (connection, Sequelize) {
         },
         accountName: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         accountServerID: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         lastSyncTime: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         rollupLastSyncTime: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         lastRollupTime: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         parentServerID: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         version: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         isReplica: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
