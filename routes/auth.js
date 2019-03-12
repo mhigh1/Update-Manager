@@ -1,6 +1,6 @@
 module.exports = (app, passport) => {
   app.get('/', (req, res) => {
-    res.render('index');
+    res.render('login', {layout: false});
   });
 
   app.get('/signup', (req, res) => {

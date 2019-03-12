@@ -11,13 +11,27 @@
 </head>
 <body>
     <div class="background"></div>
-    <div class="outer">
-        <div class="middle">
-            <div id="loginLightbox">
-                {{> partials/login_username_view }}
+    <form name='login' method="post" novalidate="novalidate" autocomplete="off" action="/signin">
+        <div class="outer">
+            <div class="middle">
+                <div id="loginLightbox">
+                    <div data-viewid="1" class="animate slide-in-right">
+                        <div class="text-title">Sign in</div>
+                        <div class="form-group mt-3">
+                            <label for="email" class="sr-only"></label>
+                            <input name="email" type="email" class="w-100 px-2" placeholder="Email">
+                        </div>
+                        <div class="action-links">
+                            <div class="form-group">
+                                <span>no account? <a href="/signup">Create one!</a></span>
+                            </div>
+                        </div>
+                        <button id="btnNext" type="button" class="btn btn-primary w-25 float-right mt-4">Next</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
     <div id="footer">
         <div id="footerLinks">
             <span class="copyright">&copy;2019 General Electric</span>
