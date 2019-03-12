@@ -3,7 +3,7 @@ body {
     margin: 0;         
 }
 
-a {
+#footerLinks a {
     color: white; 
     padding: 0px 10px;
 }
@@ -79,6 +79,7 @@ input {
 }
 
 input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="password"]:focus  {
     outline: none;
     border-color: #0067b8;
@@ -91,6 +92,10 @@ input[type="password"]:focus  {
     padding: 0;
     margin-top:20px;
     margin-bottom: 12px;
+}
+
+.action-links {
+    font-size: .8125rem;
 }
 
 .identity {
