@@ -10,15 +10,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </header>
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  {{!-- logo and name --}}
   <div class="col-xs-12 col-2">
     <a class="navbar-brand" href="/home"><img src="/assets/images/valkyrie_logo.png" alt="logo" width="40px" height="40px"></a>
     <a class=" text-white" href="/home">Valkyrie</a>
   </div>
 
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,12 +25,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="col-2">
       <div class="navbar-nav mr-auto">
-        <!--name and dropdown-->
-
+        <!--dropdown-->
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            Menue
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/home">Home</a>
@@ -42,21 +40,20 @@
         </div>
       </div>
     </div>
+    <!--search-->
     <div class="col-6">
       <div id="searchBar">
         <span class="fa fa-search"></span>
         <input id="globalSearch" type="search" name="globalSearch" class="w-100" placeholder="Search" />
       </div>
     </div>
-    <!--search-->
-
     <!--user info-->
     <div class=" col-3">
       <div class="navbar-nav justify-content-end mr-auto">
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-shield"></i>
-            User
+            {{username}}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">User Page</a>

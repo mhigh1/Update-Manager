@@ -20,7 +20,8 @@ module.exports = (app, passport) => {
   );
 
   app.get('/home', isLoggedIn, (req, res) => {
-    res.render('home');
+    //trying to get the username to display on page
+    res.render('home', { username: req.user.firstname +' '+ req.user.lastname });
   });
 
   app.get('/logout', (req, res) => {
