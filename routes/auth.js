@@ -1,14 +1,14 @@
 module.exports = (app, passport) => {
   app.get('/', (req, res) => {
-    res.render('login', {layout: false});
+    res.render('login', {layout: false});//use layout false to not show default layout
   });
 
   app.get('/signup', (req, res) => {
     res.render('signup');
   });
 
-  app.get('/signin', (req, res) => {
-    res.render('signin');
+  app.get('/login', (req, res) => {
+    res.render('login', {layout: false});
   });
 
   app.post(
@@ -30,16 +30,16 @@ module.exports = (app, passport) => {
   });
 
   app.post(
-    '/signin',
+    '/signin', //track down where it is comming from 
     passport.authenticate('local-signin', {
       successRedirect: '/home',
-      failureRedirect: '/signin'
+      failureRedirect: '/login'
     })
   );
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
 
-    res.redirect('/signin');
+    res.redirect('/login');
   }
 };
