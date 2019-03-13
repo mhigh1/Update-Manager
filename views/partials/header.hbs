@@ -1,7 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-    aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="col-xs-12 col-lg-2 col-xl-1">
+    <a class="navbar-brand" href="/home"><img src="/assets/images/valkyrie-logo_500x500.png" alt="logo" width="40px" height="40px"></a>
+    <a class=" text-white" href="/home">Valkyrie</a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="col-xl-1">
+      <div class="navbar-nav mr-auto">
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/home">Home</a>
+            <a class="dropdown-item" href="#">Devices</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Administration</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-xl-8">
+      <div id="searchBar">
+        <span class="fa fa-search"></span>
+        <input id="globalSearch" type="search" name="globalSearch" class="w-100" placeholder="Search" />
+      </div>
+    </div>
+    <div class="col-lg-2 col-xl-3">
+      <div class="navbar-nav justify-content-end mr-auto">
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-shield pr-2"></i>{{username}}</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/logout">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
