@@ -28,3 +28,18 @@
     height: 100%;
     left: 228px;
 }
+
+/* TopNav CSS */
+  input#globalSearch {
+    border-radius: 25px;
+    border: none;
+    height: 35px;
+    padding-left: 38px;
+  }
+  
+  #searchBar .fa-search {
+    position: absolute;
+    top:10px; 
+    left:30px;
+    color: gray;
+  }
