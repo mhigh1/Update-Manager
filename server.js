@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 const exphbs = require('express-handlebars');
 const hbsHelpers = require('./lib/hbsHelpers');
+var flash    = require('connect-flash');
 const helmet = require('helmet');
 
 // BodyParser
@@ -49,6 +50,8 @@ app.use(
 ); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash()); // use connect-flash for flash messages stored in session
+// Handlebars
 
 
 /* -----------Handlebars---------------- */
