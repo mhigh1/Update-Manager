@@ -4,7 +4,7 @@ module.exports = (app, passport) => {
   });
 
   app.get('/signup', (req, res) => {
-    res.render('signup', {/* layout: false, */ error: req.flash('error')});
+    res.render('signup', {layout: false, error: req.flash('error')});
   });
 
   app.get('/login', (req, res) => {
@@ -31,7 +31,7 @@ module.exports = (app, passport) => {
   });
 
   app.post(
-    '/signin', //track down where it is comming from 
+    '/signin', //track down where it is comming from Val- suspect this is from the action="/signin" on the login form
     passport.authenticate('local-signin', {
       successRedirect: '/home',
       failureRedirect: '/login',
