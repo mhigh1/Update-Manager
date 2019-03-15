@@ -1,0 +1,3 @@
+INSERT INTO `valkyrie_db`.`tbldevicedetails` (`deviceID`, `osMajorVersion`, `osMinorVersion`, `osBuildNumber`, `osServicePack`, `osLocale`, `computerMake`, `computerModel`, `biosVersion`) VALUES ('1', '6', '10', '0', '0', 'NA', 'NA', 'NA', 'NA');
+INSERT INTO `valkyrie_db`.`tbldevicedetails` (`deviceID`, `osMajorVersion`, `osMinorVersion`, `osBuildNumber`, `osServicePack`, `osLocale`, `computerMake`, `computerModel`, `biosVersion`) VALUES ('2', '7', '6', '0', '0', 'NA', 'NA', 'NA', 'NA');
+INSERT INTO `valkyrie_db`.`tbldevicedetails` (`deviceID`, `osMajorVersion`, `osMinorVersion`, `osBuildNumber`, `osServicePack`, `osLocale`, `computerMake`, `computerModel`, `biosVersion`) VALUES ('3', '6', '10', '0', '0', 'NA', 'NA', 'NA', 'NA');
