@@ -1,0 +1,6 @@
+INSERT INTO `valkyrie_db`.`tbllinuxupdates` (`packageID`, `title`, `description`, `severity`, `securityBulletin`, `additionalInfoUrl`) VALUES ('1', 'kernel-3.10.0-957.5.1.el7.x86_64', 'Important', '3', 'RHSA-2019:0163', 'NA');
+INSERT INTO `valkyrie_db`.`tbllinuxupdates` (`packageID`, `title`, `description`, `severity`, `securityBulletin`, `additionalInfoUrl`) VALUES ('2', 'bind-utils-9.9.4-73.el7_6.x86_64', 'Moderate', '2', 'RHSA-2019:0194', 'NA');
+INSERT INTO `valkyrie_db`.`tbllinuxupdates` (`packageID`, `title`, `description`, `severity`, `securityBulletin`, `additionalInfoUrl`) VALUES ('3', 'systemd-219-62.el7_6.3.x86_64', 'Low', '1', 'RHSA-2019:0201', 'NA');
+INSERT INTO `valkyrie_db`.`tbllinuxupdates` (`packageID`, `title`, `description`, `severity`, `securityBulletin`, `additionalInfoUrl`) VALUES ('4', 'kernel-2.6.32-754.11.1.el6.x86_64', 'Important', '3', 'ELSA-2019:0415', 'NA');
+INSERT INTO `valkyrie_db`.`tbllinuxupdates` (`packageID`, `title`, `description`, `severity`, `securityBulletin`, `additionalInfoUrl`) VALUES ('5', 'perf-2.6.32-754.11.1.el6.x86_64', 'Important', '3', 'ELSA-2019-0415', 'NA');
+INSERT INTO `valkyrie_db`.`tbllinuxupdates` (`packageID`, `title`, `description`, `severity`, `securityBulletin`, `additionalInfoUrl`) VALUES ('6', 'cups-1.4.2-80.el6_10.x86_64.rpm', 'Low', '1', 'RHBA-2019:0062', 'NA');

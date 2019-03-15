@@ -9,7 +9,7 @@ module.exports = function (connection, Sequelize) {
                 notEmpty: true
             }
         },
-        pachageID: {
+        packageID: {
             PRIMARYKEY: true,
             type: Sequelize.INTEGER,
             allowNull: false,
