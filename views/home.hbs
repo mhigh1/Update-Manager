@@ -1,12 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md">
-      <h2>Congratulations!</h2>
-      <h5>You have logged in successfully.</h5>
-      <a class="btn btn-primary" href="/logout" role="button">Sign Out</a>
+<div class="container-fluid fill-parent" style="overflow-y: auto;">
+    <div class="row py-3"></div>      
+    <div id="metrics" class="row mb-3">
+        <div class="col-sm-12 col-md-4 col-lg-2">
+            <div class="card">
+                <div class="card-header card-title">Device Count</div>
+                <div id="deviceCount" class="card-body text-center" style="font-size: 3rem;"></div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-3">
+            <div class="card">
+                <div class="card-header card-title">Updates Summary</div>
+            </div>
+        </div>
     </div>
-    <div class="col-md">
-      <h1>All servers will be up to date!</h1>
-      <img src="http://clipart-library.com/img/1760948.jpg" alt="logo" width="499px" height="499px">
+    <div class="row mb-3">        
+        <div class="col">
+            <div class="card" style="border:none;">
+                    <div class="card-header p-1" style="border: none;">
+                        <span style="font-weight: 100; font-size: 1.25rem">My Devices</span>
+                    </div>
+                <div class="card-body" style="overflow: hidden; border: 1px solid rgba(0,0,0,.125); border-radius: .25rem;">
+                        <div style="flex: 1; flex-shrink: 1; flex-wrap: wrap;">
+                            <div id="deviceCards" class="grid-layout"></div>
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
+{{#section 'scripts'}}
+    <script src="assets/js/myDevices.js"></script>
+{{/section}}
