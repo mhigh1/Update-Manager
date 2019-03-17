@@ -27,6 +27,10 @@ module.exports = (app, passport) => {
   app.get('/devices', isLoggedIn, (req, res) => {
     res.render('devices', { username: `${req.user.firstname} ${req.user.lastname}` });
   });
+  
+  app.get('/deviceGroup', isLoggedIn, (req, res) => {
+      res.render('deviceGroup', { username: `${req.user.firstname} ${req.user.lastname}` });
+  });
 
   app.get('/logout', (req, res) => {
     req.session.destroy(err => {
