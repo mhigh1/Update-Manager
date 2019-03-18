@@ -92,6 +92,25 @@ $(document).ready(function() {
     // Get the URL parameters
     const urlParams = new URLSearchParams(window.location.search);
 
+    // Get device group from URL
+    $.get(`/api/deviceCollection/${urlParams.get('collectionId')}`)
+    .then(function(data) {
+        console.log(data);
+        $('#collectionName').text(data.Name);
+
+        // Get all devices with the device group
+        $.get(`/api/devices?collectionId=${urlParams.get('collectionId')}`)
+        .then(function(data) {
+            console.log(data);
+            
+            $('#deviceCount').text(data.length);
+        });
+    });
+
+    
+
+
+
     $('#devices').DataTable({
         "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
         "language": {
