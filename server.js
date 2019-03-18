@@ -79,6 +79,7 @@ app.use(express.static(__dirname + "/public"));
 
  /* -------Routes--------- */
 const authRoute = require('./routes/auth.js')(app, passport);
+require('./routes/api-routes')(app);
 
  /* ---------Load passport strategies-------- */
 require('./config/passport/passport.js')(passport, models.user);
