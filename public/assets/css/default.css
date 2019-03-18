@@ -31,6 +31,11 @@
     overflow: hidden;
 }
 
+.separator {
+  border-left: 1px solid #ddd;
+  margin: 0px 20px;
+}
+
 /* TopNav CSS */
   input#globalSearch {
     border-radius: 25px;
@@ -125,6 +130,37 @@
     grid-gap: .4875rem;
     grid-template-columns: repeat(auto-fill, minmax(18.75rem,1fr));
     grid-template-rows: auto;
+  }
+
+  /* Custom Table Style for Cards */
+  .card-table {
+    width: 100%;
+    margin-top: 2rem;
+    color: #212529;
+    font-size: .8rem;
+  }
+
+  .card-table td,
+  .card-table th {
+    padding: .2rem .5rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .card-table thead th {
+    vertical-align: bottom;
+    border-right: 2px solid #dee2e6;
+    border-bottom: 4px solid #dee2e6;
+    border-left: 2px solid #dee2e6;
+    font-size: .7rem;
+  }
+
+  .card-table thead th:first-child {
+    border-left: none;
+  }
+  .card-table thead th:last-child {
+    border-right: none;
   }
 
 
