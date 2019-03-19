@@ -3,9 +3,8 @@
 module.exports = function (connection, Sequelize) {
     var tblLinuxUpdates = connection.define('tblLinuxUpdates', {
         packageID: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.UUID,
             primaryKey: true,
-            autoIncrement: true,
             allowNull: false,
             validate: {
                 notEmpty: true

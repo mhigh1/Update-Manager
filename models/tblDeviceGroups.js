@@ -1,5 +1,5 @@
 module.exports = function (connection, Sequelize) {
-    const tblDeviceGroup = connection.define('tblDeviceGroup', {
+    const tblDeviceGroups = connection.define('tblDeviceGroups', {
         name: {
             type: Sequelize.STRING,
             allowNull: false,
@@ -27,7 +27,7 @@ module.exports = function (connection, Sequelize) {
             allowNull: true,
             references: {
                 model: 'tblDeviceGroups',
-                key: 'TargetGroupID'
+                key: 'targetGroupID'
             }
         },
         isBuiltin: {
@@ -39,7 +39,7 @@ module.exports = function (connection, Sequelize) {
     });
 
     // Associations
-    tblDeviceGroup.belongsTo(tblDeviceGroup, {foreignKey: 'parentGroupID'});
+    tblDeviceGroups.belongsTo(tblDeviceGroups, {foreignKey: 'parentGroupID'});
 
-    return tblDeviceGroup;
+    return tblDeviceGroups;
 };

@@ -1,1 +1,0 @@
-INSERT INTO `valkyrie_db`.`tbldowstreamservers` (`serverID`, `accountName`, `accountServerID`, `lastSyncTime`, `rollupLastSyncTime`, `lastRollupTime`, `parentServerID`, `version`, `isReplica`) VALUES ('1', 'patches.tsg.ge.com', 'NA', '2019-03-01 00:00:00', '2019-03-01 00:00:00', '2019-03-01 00:00:00', '0', '2.1', '0');
