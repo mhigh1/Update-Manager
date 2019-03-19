@@ -1,0 +1,26 @@
+[
+    {
+        "Status": "Installed",
+        "Percentage": "0.40",
+    },
+    {
+        "Status": "Needed",
+        "Percentage": "0.20",
+    },
+    {
+        "Status": "Downloaded",
+        "Percentage": "0.10",
+    },
+    {
+        "Status": "Pending",
+        "Percentage": "0.10",
+    },
+    {
+        "Status": "Failed",
+        "Percentage": ".05",
+    },
+        {
+        "Status": "Unknown",
+        "Percentage": ".05",
+    }
+];

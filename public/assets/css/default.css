@@ -114,58 +114,73 @@
   left: 0;
 }
 
-  /* Card Styles */
-  .card-title {
-    background-color: #ffffff!important;
-    font-size: 1.15rem;
-    font-weight: 100;
-    padding: .50rem .75rem!important;
-  }
+/* Card Styles */
+.card-title {
+  background-color: #ffffff!important;
+  font-size: 1.15rem;
+  font-weight: 100;
+  padding: .50rem .75rem!important;
+}
 
-  .grid-layout {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: .4875rem;
-    grid-template-columns: repeat(auto-fill, minmax(18.75rem,1fr));
-    grid-template-rows: auto;
-  }
+.grid-layout {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: .4875rem;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem,1fr));
+  grid-template-rows: auto;
+}
 
-  /* Custom Table Style for Cards */
-  .card-table {
-    width: 100%;
-    margin-top: 2rem;
-    color: #212529;
-    font-size: .8rem;
-  }
+/* Custom Table Style for Cards */
+.card-table {
+  width: 100%;
+  margin-top: 2rem;
+  color: #212529;
+  font-size: .8rem;
+}
 
-  .card-table td,
-  .card-table th {
-    padding: .2rem .5rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-    border-bottom: 1px solid #dee2e6;
-  }
+.card-table td,
+.card-table th {
+  padding: .2rem .5rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
 
-  .card-table thead th {
-    vertical-align: bottom;
-    border-right: 2px solid #dee2e6;
-    border-bottom: 4px solid #dee2e6;
-    border-left: 2px solid #dee2e6;
-    font-size: .7rem;
-  }
+.card-table thead th {
+  vertical-align: bottom;
+  border-right: 2px solid #dee2e6;
+  border-bottom: 4px solid #dee2e6;
+  border-left: 2px solid #dee2e6;
+  font-size: .7rem;
+}
 
-  .card-table thead th:first-child {
-    border-left: none;
-  }
-  .card-table thead th:last-child {
-    border-right: none;
-  }
+.card-table thead th:first-child {
+  border-left: none;
+}
+.card-table thead th:last-child {
+  border-right: none;
+}
+
+/* Device page specific styles */
+ul#deviceTabs {
+  padding-bottom: 2px;
+  height: 30px;
+}
+.tab-link, .tab-link:hover {
+  color: #212529;
+  text-decoration: none;
+  padding: 0px 8px;
+  padding-bottom: 4px;
+}
+.tab-link.active {
+  border-bottom: 4px solid #00B5E2;
+}
 
 
-  /* MEDIA QUERIES */
- @media screen and (max-width: 768px) {  
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {  
   #center-panel {
     position: absolute;
     top: 0;
