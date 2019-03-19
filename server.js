@@ -11,6 +11,15 @@ const hbsHelpers = require('./lib/hbsHelpers');
 var flash    = require('connect-flash');
 const helmet = require('helmet');
 
+//for testing
+const {User} = require('./tests/db.models.user')
+// representative serialize/deserialize implementations but done with a dummy User
+passport.serializeUser((user, done) => done(null, user.id));
+passport.deserializeUser((id, done) =>
+  User.findById(id).then(user => done(null, user)).catch(done)
+);
+
+
 // BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
