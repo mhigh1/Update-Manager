@@ -85,12 +85,14 @@ require('./routes/api-routes')(app);
 require('./config/passport/passport.js')(passport, models.user);
 
  /* --------Sync Database------------ */
+ var PORT = process.env.PORT || 3000;
+ 
 models.sequelize
   .sync()
   .then(function () {
     console.log('Database Connected');
 
-    app.listen(3000, function (err) {
+    app.listen(PORT, function (err) {
       if (!err) console.log('Connected at http://localhost:3000');
       else console.log(err);
     });
