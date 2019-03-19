@@ -1,5 +1,6 @@
 {{#section 'head'}}
     <link rel="stylesheet" type="text/css" href="/assets/js/DataTables/datatables.min.css"/> 
+    <link rel="stylesheet" href="/assets/css/donut.css">
 {{/section}}
 
 <div class="container-fluid fill-parent" style="overflow-y: auto;">
@@ -44,9 +45,10 @@
             <div class="card fill-parent">
                 <div class="card-header card-title">Updates Status</div>
                 <div class="card-body d-flex">
-                    <svg width="50%" viewBox="0 0 5 5">
-                        <rect x="0" y="0" width="5" height="5" />
-                    </svg>
+                <div id="chart1">  </div>
+                    {{!-- <svg width="50%" viewBox="0 0 145 145">
+                        <div id="chart1" class="d-inline-block">  </div>
+                    </svg> --}}
                     <div class="d-inline-block ml-3">
                         <div style="border-left: 5px solid #009e49; margin-bottom: 6px;">
                             <div style="padding-left:6px;">
@@ -131,4 +133,7 @@
 {{#section 'scripts'}}
     <script type="text/javascript" src="/assets/js/DataTables/datatables.min.js"></script>
     <script type="text/javascript" src="/assets/js/deviceGroup.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="/assets/js/donut.js"></script>
+    <script type="text/javascript" src="/assets/js/donutMod.js"></script>
 {{/section}}
