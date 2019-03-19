@@ -3,9 +3,8 @@
 module.exports = function (connection, Sequelize) {
     var tblWSUSUpdates = connection.define('tblWSUSUpdates', {
         updateID: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.UUID,
             primaryKey: true,
-            autoIncrement: true,
             allowNull: false,
             validate: {
                 notEmpty: true
@@ -19,7 +18,7 @@ module.exports = function (connection, Sequelize) {
             }
         },
         description: {
-            type: Sequelize.STRING,
+            type: Sequelize.TEXT,
             allowNull: true,
             validate: {
                 notEmpty: true
@@ -39,7 +38,7 @@ module.exports = function (connection, Sequelize) {
                 notEmpty: true
             }
         },
-        mSrcSeverity: {
+        msrcSeverity: {
             type: Sequelize.STRING,
             allowNull: true,
             validate: {
@@ -88,10 +87,9 @@ module.exports = function (connection, Sequelize) {
                 notEmpty: true
             }
         }
+    },{
+        timestamps: false
     });
-    tblWSUSUpdates.removeAttribute('id');
-    tblWSUSUpdates.removeAttribute('createdAt');
-    tblWSUSUpdates.removeAttribute('updatedAt');
-
+    
     return tblWSUSUpdates;
 };
