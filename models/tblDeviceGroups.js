@@ -39,7 +39,9 @@ module.exports = function (connection, Sequelize) {
     });
 
     // Associations
-    tblDeviceGroups.belongsTo(tblDeviceGroups, {foreignKey: 'parentGroupID'});
-
+    tblDeviceGroups.associate = function(models) {
+        tblDeviceGroups.belongsTo(tblDeviceGroups, {foreignKey: 'parentGroupID'});
+        tblDeviceGroups.hasMany(models.tblDevices, {foreignKey: 'targetGroupID'});
+    }
     return tblDeviceGroups;
 };

@@ -2,9 +2,19 @@ const db = require('../models');
 
 module.exports = function(app) {
 /* -------------Device and groups--------------- */
+    
     app.get('/api/devices/groups', function(req, res) {
         db.tblDeviceGroups.findAll({
-            where: req.query
+            attributes: [
+                'name', 'description', 'targetGroupID', 'parentGroupID', 'isBuiltin',
+                [db.sequelize.fn('COUNT', db.sequelize.col('tblDevices.deviceID')), 'deviceCount']
+            ],
+            include: [{
+            model: db.tblDevices,
+            required: false,
+            attributes: []
+            }],
+            group: ['targetGroupID']
         }).then(function(data) {
             res.json(data);
         }).catch(function(error) {
