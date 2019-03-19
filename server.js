@@ -98,3 +98,5 @@ models.sequelize
   .catch(function (err) {
     console.log(err, 'Error on Database Sync. Please try again!');
   });
+
+  module.exports =app;
