@@ -7,6 +7,9 @@
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean-modules": "rm -rf node_modules && npm install",
+    "git-commit": "git add -A . && git commit -m 'project-feature-update'",
+    "git-push": "git push origin NPMScripts",
+    "git-deploy": "npm git-commit && npm git-push"
 
   },
   "keywords": [],
