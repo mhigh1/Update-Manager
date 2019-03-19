@@ -4,7 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha ./tests"
+    "test": "node_modules/mocha/bin/mocha ./tests",
+    "start": "nodemon server.js",
+    "clean-modules": "rm -rf node_modules && npm install",
+    "git-commit": "git add -A . && git commit -m 'project-feature-update'",
+    "git-push": "git push origin NPMScripts && git checkout master"
+  
+
   },
   "keywords": [],
   "author": "",
