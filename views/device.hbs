@@ -1,0 +1,327 @@
+{{#section 'head'}}
+    <link rel="stylesheet" type="text/css" href="/assets/js/DataTables/datatables.min.css"/> 
+{{/section}}
+
+<div class="container-fluid fill-parent" style="overflow-y:auto">
+    <div class="row">
+        <nav aria-label="breadcrumb" class="w-100 text-secondary">
+            <ol class="breadcrumb" style="font-size: .75em; padding: .5em 1em;">
+                <li class="breadcrumb-item">Devices</li>
+                <li class="breadcrumb-item">Manual Reboot</li>
+                <li class="breadcrumb-item active" aria-current="page">CTS2012R2D1</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+            <h3 id="deviceName">CTS2012R2D1</h3>
+        </div>
+    </div>
+    <div class="row pb-3">
+        <div class="col" style="border-bottom:2px;">
+            <ul class="nav nav-tabs" id="deviceTabs" role="tablist">
+                <li class="nav-item mr-2">
+                    <a class="tab-link active" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Summary</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="tab-link" id="updates-tab" data-toggle="tab" href="#updates" role="tab" aria-controls="updates" aria-selected="false">Updates</a>
+                </li>
+                </ul>
+        </div>
+    </div>
+  
+    <!-- TAB PANELS -->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane show active" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+            <div class="row pb-3">
+                <div class="col">
+                    <div class="float-left pr-4 pt-2">
+                        <img src="/assets/images/microsoft_200x200.png" width="75px" height="75px" alt="microsoft logo" class="mx-auto" />
+                    </div>
+                    <table>
+                        <tr>
+                            <th width="125px">Device OS:</th>
+                            <td>Windows Server 2012 R2</td>
+                        </tr>
+                        <tr>
+                            <th>FQDN:</th>
+                            <td>cts2012r2d1.logon.ds.ge.com</td>
+                        </tr>
+                        <tr>
+                            <th>Manufacturer:</th>
+                            <td>VMware, Inc.</td>
+                        </tr>
+                        <tr>
+                            <th>Model:</th>
+                            <td>Virtual Machine</td>
+                        </tr>
+                        <tr>
+                            <th>Entitlement:</th>
+                            <td>CTS Patching SnS - Standard</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-danger p-2" role="alert">
+                        <span>Device has not reported status in more than 30 days.</span>
+                        <a href="#" class="float-right">Reset to Green</a>
+                    </div>
+                    <div class="alert alert-warning p-2" role="alert">
+                        <span>A newer version of the Windows Update Client is avialable for this server.</span>
+                        <a href="#" class="float-right">Acknowledge</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header p-1 pl-2">
+                            <span class="font-weight-bold">Asset Information</span>
+                        </div>
+                        <div class="card-body" style="overflow: hidden;">
+                            <table class="table table-sm mb-0 bg-light border" style="font-size: .8em;">
+                                <tbody>
+                                    <tr>
+                                        <th width="20%">Asset ID</th>
+                                        <td>1002520656</td>
+                                    </tr>
+                                    <tr>
+                                        <th>FQDN</th>
+                                        <td>cts2012r2d1.logon.ds.ge.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Status</th>
+                                        <td>Operational</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Maintenance Schedule</th>
+                                        <td>Manual Reboot (Windows)</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Export Control</th>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <th>OS</th>
+                                        <td>Windows Server 2012 R2 Standard (x64)</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Environment</th>
+                                        <td>Development</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IP Address</th>
+                                        <td>10.0.0.1</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Business</th>
+                                        <td>GE Digital</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Department</th>
+                                        <td>DIG TECH-Core Technical Solutions</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Support Group</th>
+                                        <td>@Digital SDDC L2 OS Ops NON EC</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Owner</th>
+                                        <td>Cornell, Michael (223003364)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-header p-1 pl-2">
+                            <span class="font-weight-bold">Compliance</span>
+                        </div>
+                        <div class="card-body" style="overflow: hidden;">
+                            <table class="table table-sm mb-0 bg-light border" style="font-size: .8em;">
+                                <tbody>
+                                    <tr>
+                                        <th width="15%">Compliance</th>
+                                        <td><i class="far fa-check-circle pr-2" style="color: green;"></i>Compliant</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Installed Updates</th>
+                                        <td>52</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header p-1 pl-2">
+                            <span class="font-weight-bold">Windows Update</span>
+                        </div>
+                        <div class="card-body" style="overflow: hidden;">
+                            <table class="table table-sm mb-0 bg-light border" style="font-size: .8em;">
+                                <tbody>
+                                    <tr>
+                                        <th width="15%">Agent Version</th>
+                                        <td>7.6.7601.24085</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Home Server</th>
+                                        <td>us-wsus-pool-1.digital.ge.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Target Group</th>
+                                        <td>Manual</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Last Syncronized</th>
+                                        <td>2019-03-29 7:34 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Last Reported</th>
+                                        <td>2019-03-29 7:42 PM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header p-1 pl-2">
+                            <span class="font-weight-bold">Notes</span>
+                        </div>
+                        <div class="card-body" style="overflow: hidden;">
+                        </div>
+                        <span class="px-3 pb-1" style="font-size: .75em;"><a href="#">Edit Notes...</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="updates" role="tabpanel" aria-labelledby="updates-tab">
+            <div id="metrics" class="row mb-3">
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <div class="card fill-parent">
+                        <div class="card-header card-title">Updates Status</div>
+                        <div class="card-body d-flex">
+                            <svg width="50%" viewBox="0 0 5 5">
+                                <rect x="0" y="0" width="5" height="5" />
+                            </svg>
+                            <div class="d-inline-block ml-3">
+                                <div style="border-left: 5px solid #009e49; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">INSTALLED</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #ff8c00; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">NEEDED</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #28B9F5; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">DOWNLOADED</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #512bd4; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">PENDING</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #e81123; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">FAILED</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #000000; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">STATUS UNKNOWN</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <div class="card fill-parent mb-3" style="overflow: auto">
+                        <div class="card-header card-title">Compliance</div>
+                        <div class="card-body">
+                            <div class="d-flex px-3">
+                                <div class="d-inline-block text-center" style="width: 40%;">
+                                    <span style="font-size: 6rem; line-height: 6rem">A+</span>
+                                </div>
+                                <div class="separator"></div>
+                                <div class="d-inline-block">
+                                    <ul style="list-style-type: none; font-size: .95rem; padding-left: 0;">
+                                        <li>0 critical updates Needed</li>
+                                        <li>0 security update Needed</li>
+                                        <li>No Core-OS Vulnerabilities</li>
+                                        <li>0 non-compliant baselines</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="card" style="border:none;">
+                        <div class="card-header p-1" style="border: none;">
+                            <span style="font-weight: 100; font-size: 1.25rem">Update Details</span>
+                        </div>
+                        <div class="card-body" style="overflow: hidden; border: 1px solid rgba(0,0,0,.125); border-radius: .25rem;">
+                            <table id="updates" class="table table-sm table-striped">
+                                <thead style="font-size: .8rem">
+                                    <th>KB Number</th>
+                                    <th>Title</th>
+                                    <th>Bulletin</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Release Date</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>KB2978120</td>
+                                        <td>Security Update for Microsoft .NET Framework 3.5.1</td>
+                                        <td>MS14-072</td>
+                                        <td>Security Update</td>
+                                        <td>Installed</td>
+                                        <td>2014-11-11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KB3035126</td>
+                                        <td>Security Update for Windows Server 2008</td>
+                                        <td>MS15-041</td>
+                                        <td>Security Update</td>
+                                        <td>Installed</td>
+                                        <td>2014-10-15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KB4487078</td>
+                                        <td>2019-02 Security and Quality Rollup for .NET Framework 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 for Server 2008 R2 (x64)</td>
+                                        <td>NA</td>
+                                        <td>.NET</td>
+                                        <td>Installed</td>
+                                        <td>2019-02-12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#section 'scripts'}}
+    <script type="text/javascript" src="/assets/js/DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="/assets/js/device.js"></script>
+{{/section}}

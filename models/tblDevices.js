@@ -74,23 +74,28 @@ module.exports = function (connection, Sequelize) {
             validate: {
                 notEmpty: true
             }
+        },
+        targetGroupID: {
+            type: Sequelize.UUID,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            },
+            references: {
+                model: 'tblDeviceGroups',
+                key: 'targetGroupID'
+            }
         }
         
+    },{
+        timestamps: false
     });
+
     tblDevices.associate = function(models) {
         tblDevices.hasOne(models.tblDeviceDetails, {foreignKey: 'deviceID'});
         tblDevices.belongsTo(models.tblDowstreamServers, {foreignKey: 'parentServerID'});
-
+        tblDevices.belongsTo(models.tblDeviceGroups, {foreignKey: 'targetGroupID'});
     }
-    
-    // 1:M
-    //tblDowstreamServers.hasMany(tblDevices, {foreignKey: 'parentServerID'});
-    //tblDevices.belongsTo(tblDowstreamServers, {foreignKey: 'parentServerID'});
-
-
-    tblDevices.removeAttribute('id');
-    tblDevices.removeAttribute('createdAt');
-    tblDevices.removeAttribute('updatedAt');
 
     return tblDevices;
 };

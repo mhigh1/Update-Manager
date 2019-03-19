@@ -1,47 +1,45 @@
 module.exports = function (connection, Sequelize) {
-    const tblDeviceCollections = connection.define('tblDeviceCollections', {
-        Name: {
+    const tblDeviceGroups = connection.define('tblDeviceGroups', {
+        name: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
-        Description: {
+        description: {
             type: Sequelize.STRING,
             allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
-        TargetGroupID: {
-            type: Sequelize.STRING,
+        targetGroupID: {
             primaryKey: true,
+            type: Sequelize.UUID,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
-        ParentGroupID: {
-            type: Sequelize.STRING,   
+        parentGroupID: {
+            type: Sequelize.UUID,   
             allowNull: true,
             references: {
-                model: 'tblDeviceCollections',
-                key: 'TargetGroupID'
+                model: 'tblDeviceGroups',
+                key: 'targetGroupID'
             }
         },
-        IsBuiltin: {
+        isBuiltin: {
             type: Sequelize.BOOLEAN,
             allowNull: false,
         }
     },{
-        timestamps: false,
-        freezeTableName: true,
-        tableName: "tblDeviceCollections"
+        timestamps: false
     });
 
     // Associations
-    tblDeviceCollections.belongsTo(tblDeviceCollections, {foreignKey: 'ParentGroupID'});
+    tblDeviceGroups.belongsTo(tblDeviceGroups, {foreignKey: 'parentGroupID'});
 
-    return tblDeviceCollections;
+    return tblDeviceGroups;
 };

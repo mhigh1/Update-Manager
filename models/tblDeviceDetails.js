@@ -45,6 +45,13 @@ module.exports = function (connection, Sequelize) {
                 notEmpty: true
             }
         },
+        osFamily: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
         computerMake: {
             type: Sequelize.STRING,
             allowNull: true,
