@@ -33,13 +33,6 @@ module.exports = function (connection, Sequelize) {
                 notEmpty: true
             }
         },
-        deviceGroup: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            validate: {
-                notEmpty: true
-            }
-        },
         lastSyncTime: {
             type: Sequelize.DATE,
             allowNull: true,
