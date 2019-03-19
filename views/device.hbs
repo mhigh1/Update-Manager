@@ -2,7 +2,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/js/DataTables/datatables.min.css"/> 
 {{/section}}
 
-<div id="mainPane" class="container-fluid">
+<div class="container-fluid fill-parent" style="overflow-y:auto">
     <div class="row">
         <nav aria-label="breadcrumb" class="w-100 text-secondary">
             <ol class="breadcrumb" style="font-size: .75em; padding: .5em 1em;">
@@ -12,9 +12,9 @@
             </ol>
         </nav>
     </div>
-    <div class="row pb-2">
+    <div class="row mb-2">
         <div class="col">
-            <h3>CTS2012R2D1</h3>
+            <h3 id="deviceName">CTS2012R2D1</h3>
         </div>
     </div>
     <div class="row pb-3">
@@ -29,14 +29,14 @@
                 </ul>
         </div>
     </div>
-        
+  
     <!-- TAB PANELS -->
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane show active" id="summary" role="tabpanel" aria-labelledby="summary-tab">
             <div class="row pb-3">
                 <div class="col">
                     <div class="float-left pr-4 pt-2">
-                        <img src="/assets/images/microsoft-200x200.png" width="75px" height="75px" alt="microsoft logo" class="mx-auto" />
+                        <img src="/assets/images/microsoft_200x200.png" width="75px" height="75px" alt="microsoft logo" class="mx-auto" />
                     </div>
                     <table>
                         <tr>
@@ -142,18 +142,18 @@
                             <span class="font-weight-bold">Compliance</span>
                         </div>
                         <div class="card-body" style="overflow: hidden;">
-                                <table class="table table-sm mb-0 bg-light border" style="font-size: .8em;">
-                                    <tbody>
-                                        <tr>
-                                            <th width="15%">Compliance</th>
-                                            <td><i class="far fa-check-circle pr-2" style="color: green;"></i>Compliant</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Installed Updates</th>
-                                            <td>52</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <table class="table table-sm mb-0 bg-light border" style="font-size: .8em;">
+                                <tbody>
+                                    <tr>
+                                        <th width="15%">Compliance</th>
+                                        <td><i class="far fa-check-circle pr-2" style="color: green;"></i>Compliant</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Installed Updates</th>
+                                        <td>52</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="card mb-3">
@@ -199,70 +199,71 @@
             </div>
         </div>
         <div class="tab-pane" id="updates" role="tabpanel" aria-labelledby="updates-tab">
-            <div class="row mb-3">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card">
-                            <div class="card-header" style="background-color: #ffffff; font-size: 1.35rem; font-weight: 100; padding:.50rem .75rem">Updates</div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <img src="..." width="250px;" height="250px;">
+            <div id="metrics" class="row mb-3">
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <div class="card fill-parent">
+                        <div class="card-header card-title">Updates Status</div>
+                        <div class="card-body d-flex">
+                            <svg width="50%" viewBox="0 0 5 5">
+                                <rect x="0" y="0" width="5" height="5" />
+                            </svg>
+                            <div class="d-inline-block ml-3">
+                                <div style="border-left: 5px solid #009e49; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">INSTALLED</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
                                     </div>
-                                    <div class="col-6">
-                                        <div style="border-left: 5px solid #009e49; margin-bottom: 6px;">
-                                            <div style="padding-left:6px;">
-                                                <div style="font-size: .7em; line-height: .9em;">INSTALLED</div>
-                                                <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">52</div>
-                                            </div>
-                                        </div>
-                                        <div style="border-left: 5px solid #ff8c00; margin-bottom: 6px;">
-                                            <div style="padding-left:6px;">
-                                                <div style="font-size: .7em; line-height: .9em;">NEEDED</div>
-                                                <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
-                                            </div>
-                                        </div>
-                                        <div style="border-left: 5px solid #28B9F5; margin-bottom: 6px;">
-                                            <div style="padding-left:6px;">
-                                                <div style="font-size: .7em; line-height: .9em;">DOWNLOADED</div>
-                                                <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
-                                            </div>
-                                        </div>
-                                        <div style="border-left: 5px solid #512bd4; margin-bottom: 6px;">
-                                            <div style="padding-left:6px;">
-                                                <div style="font-size: .7em; line-height: .9em;">PENDING</div>
-                                                <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
-                                            </div>
-                                        </div>
-                                        <div style="border-left: 5px solid #e81123; margin-bottom: 6px;">
-                                            <div style="padding-left:6px;">
-                                                <div style="font-size: .7em; line-height: .9em;">FAILED</div>
-                                                <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
-                                            </div>
-                                        </div>
-                                        <div style="border-left: 5px solid #000000; margin-bottom: 6px;">
-                                            <div style="padding-left:6px;">
-                                                <div style="font-size: .7em; line-height: .9em;">STATUS UNKNOWN</div>
-                                                <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div style="border-left: 5px solid #ff8c00; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">NEEDED</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #28B9F5; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">DOWNLOADED</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #512bd4; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">PENDING</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #e81123; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">FAILED</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
+                                    </div>
+                                </div>
+                                <div style="border-left: 5px solid #000000; margin-bottom: 6px;">
+                                    <div style="padding-left:6px;">
+                                        <div style="font-size: .7em; line-height: .9em;">STATUS UNKNOWN</div>
+                                        <div style="font-size: 1.25em; line-height: 1em; font-weight: 600;">0</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header" style="background-color: #ffffff; font-size: 1.35rem; font-weight: 100; padding:.50rem .75rem">Compliance</div>
-                            <div class="card-body text-center">
-                                <div class="row">
-                                    <div class="col-5" style="border-right: 1px solid rgba(0,0,0,.125);"><span style="font-size: 6rem; line-height: 6rem">A+</span></div>
-                                    <div class="col-7 text-left">
-                                        <ul style="list-style-type: none; font-size: .95rem; padding-left: 0;">
-                                            <li>0 critical updates Needed</li>
-                                            <li>0 security update Needed</li>
-                                            <li>No Core-OS Vulnerabilities</li>
-                                            <li>0 non-compliant baselines</li>
-                                        </ul>
-                                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <div class="card fill-parent mb-3" style="overflow: auto">
+                        <div class="card-header card-title">Compliance</div>
+                        <div class="card-body">
+                            <div class="d-flex px-3">
+                                <div class="d-inline-block text-center" style="width: 40%;">
+                                    <span style="font-size: 6rem; line-height: 6rem">A+</span>
+                                </div>
+                                <div class="separator"></div>
+                                <div class="d-inline-block">
+                                    <ul style="list-style-type: none; font-size: .95rem; padding-left: 0;">
+                                        <li>0 critical updates Needed</li>
+                                        <li>0 security update Needed</li>
+                                        <li>No Core-OS Vulnerabilities</li>
+                                        <li>0 non-compliant baselines</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -272,12 +273,12 @@
             <div class="row mb-3">
                 <div class="col">
                     <div class="card" style="border:none;">
-                        <div class="card-header p-1 bg-white" style="border: none;">
-                            <span style="font-weight: 100; font-size: 1.35rem">Update Details</span>
+                        <div class="card-header p-1" style="border: none;">
+                            <span style="font-weight: 100; font-size: 1.25rem">Update Details</span>
                         </div>
                         <div class="card-body" style="overflow: hidden; border: 1px solid rgba(0,0,0,.125); border-radius: .25rem;">
-                            <table id="sampleTable" class="table table-sm table-striped">
-                                <thead>
+                            <table id="updates" class="table table-sm table-striped">
+                                <thead style="font-size: .8rem">
                                     <th>KB Number</th>
                                     <th>Title</th>
                                     <th>Bulletin</th>
