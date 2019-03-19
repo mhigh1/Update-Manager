@@ -17,10 +17,10 @@ const tmplSideNav = () => {
                             </a>
                         </li>
                         <li>
-                            <a class="object" href="#">
+                            <!--<a class="object" href="#">
                                 <span class="pr-1"><i class="far fa-star"></i></span>
                                 <span class="object-navigator-label">Shortcuts</span>
-                            </a>
+                            </a>-->
                         </li>
                     </ul>
                 </li>
@@ -39,25 +39,25 @@ const tmplSideNav = () => {
                 <li>
                     <ul class="object-navigator-list">
                         <li>
-                            <a class="object" href="#">
+                            <a class="object" href="http://wsusdashboard.corporate.ge.com/wsus_dashboard/index.html"  target="_blank">
                                 <span class="pr-1"><i class="fas fa-external-link-alt"></i></span>
                                 <span class="object-navigator-label">WSUS Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a class="object" href="#">
+                            <a class="object" href="http://vdcgld03341.ics.cloud.ge.com/cgi-bin/selecttsl.cgi"  target="_blank">
                                 <span class="pr-1"><i class="fas fa-external-link-alt"></i></span>
                                 <span class="object-navigator-label">Targeted Server List</span>
                             </a>
                         </li>
                         <li>
-                            <a class="object" href="#">
+                            <a class="object" href="http://patches.tsg.ge.com/standard/"  target="_blank">
                                 <span class="pr-1"><i class="fas fa-external-link-alt"></i></span>
                                 <span class="object-navigator-label">Unix Status (Standard)</span>
                             </a>
                         </li>
                         <li>
-                            <a class="object" href="#">
+                            <a class="object" href="http://patches.tsg.ge.com/status/"  target="_blank">
                                 <span class="pr-1"><i class="fas fa-external-link-alt"></i></span>
                                 <span class="object-navigator-label">Unix Status (Concierge)</span>
                             </a>
@@ -74,7 +74,7 @@ const tmplSideNav = () => {
                             </a>
                         </li>
                         <li>
-                            <a class="object" href="#">
+                            <a class="object" href="https://github.com/mhigh1/Update-Manager"  target="_blank">
                                 <span class="pr-1"><i class="fab fa-github"></i></span>
                                 <span class="object-navigator-label">GitHub Repository</span>
                             </a>
