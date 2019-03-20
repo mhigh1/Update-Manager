@@ -114,8 +114,8 @@ $(document).ready(function() {
 
     // Get all device groups
     $.get(`/api/devices/groups`).then(function(data) {
-       let deviceGroups = data;
-
+        
+        let deviceGroups = data;
         deviceGroups.forEach(group => {
             if(group.name.includes('UNIX')) {
                 group['type'] = "Unix";
@@ -137,7 +137,7 @@ $(document).ready(function() {
             array.forEach(element => {
                 deviceTotal += element.deviceCount;
             });
-            console.log(deviceTotal);
+
             // Render the card table rows
             $("#tblDevCollOverview tbody").append(tmplDevCollOverviewRow(os, groupCount, deviceTotal));
         });
@@ -153,6 +153,7 @@ $(document).ready(function() {
         // Render Total Device Count
         $("#deviceCount").text(totalDevices);
 
+        // Render DataTable
         $('#deviceCollections').DataTable({
             "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
             "language": {
