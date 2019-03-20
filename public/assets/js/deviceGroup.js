@@ -1,8 +1,5 @@
 // Used by deviceGroup.hbs //
 
-// SAMPLE DATA
-
-
 // SideNav -- Default Menu
 const tmplSideNav = () => {
     return `
@@ -86,38 +83,94 @@ const tmplSideNav = () => {
     `;
 }
 
+// Declare variables
+let deviceCollection;
+let devices;
+
+// Get the URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+
+// Needs Attention table row template
+const tmplCardNeedsAttentionRow = function(label, value) {
+    return `
+        <tr>
+            <td>${label}</td>
+            <td>${value}</td>
+        </tr>
+    `
+};
+
+const tmplTableRows = function(id, hostname, os, installed, needed, downloaded, pending, failed, unknown) {
+    return `
+        <tr>
+            <td><a href="/device?id=${id}">${hostname}</a></td>
+            <td>${os}</td>
+            <td>${installed}</td>
+            <td>${needed}</td>
+            <td>${downloaded}</td>
+            <td>${pending}</td>
+            <td>${failed}</td>
+            <td>${unknown}</td>
+        </tr>
+    `
+}
+
+// Get Device Group from API
+$.get(`/api/devices/group/${urlParams.get('targetGroupID')}`).then(function(data) {
+    deviceCollection = data;
+        
+    // Render Device Collection Overview
+    $('#collectionName').text(deviceCollection.name);
+    $('#collectionDesc').text(deviceCollection.description);
+    $('#deviceCount').text(deviceCollection.deviceCount);
+});
+
+// Get Devices in Target Group
+$.get(`/api/devices/devices?targetGroupID=${urlParams.get('targetGroupID')}`).then(function(data) {
+    devices = data;
+});
+$.get(`/api/devices/updates?targetGroupID=${urlParams.get('targetGroupID')}`).then(function(data) {
+    const updateStatusByDevice = data;
+    
+    const attentionStates = [
+        {label: 'Reboot Required', state: 6},
+        {label: 'Updates Failed', state: 5}
+    ];
+
+    attentionStates.forEach(item => {
+        let value = updateStatusByDevice.filter(device => device.state === item.state).map(device => device.deviceID).filter((value, index, self) => self.indexOf(value) === index).length;
+        $("#tblAttentionNeeded tbody").append(tmplCardNeedsAttentionRow(item.label, value));
+    });
+    
+    needsAttentionCount = updateStatusByDevice.filter(device => device.state === 5 || device.state === 6)
+        .map(device => device.deviceID)
+        .filter((value, index, self) => self.indexOf(value) === index).length;
+
+    $('#attentionNeeded').text(needsAttentionCount);
+});
+
 // Document Ready
 $(document).ready(function() {
 
-    // Get the URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // Get device group from URL
-    $.get(`/api/deviceCollection/${urlParams.get('collectionId')}`)
-    .then(function(data) {
-        console.log(data);
-        $('#collectionName').text(data.Name);
-
-        // Get all devices with the device group
-        $.get(`/api/devices?collectionId=${urlParams.get('collectionId')}`)
-        .then(function(data) {
-            console.log(data);
-            
-            $('#deviceCount').text(data.length);
-        });
-    });
-
-    
-
-
-
-    $('#devices').DataTable({
-        "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
-        "language": {
-            "search": "Filter:"
-          }
-    });
-
     // Render the left-panel naviation
     $("#left-panel").html(tmplSideNav());
+
+    $.get(`/api/devices/updates/group/${urlParams.get('targetGroupID')}`).then(function(data) {
+        let content = "";
+
+        data.forEach(device => {
+            content += tmplTableRows(device.DeviceID, device.hostName, device.OS, device.Installed, device.Needed, device.Downloaded, device.PendingReboot, device.Failed, device.Unknown);
+        });
+
+        $('#devices tbody').html(content);
+        
+        // Apply the DataTables UI
+        $('#devices').DataTable({
+            "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+            "language": {
+                "search": "Filter:"
+            }
+        });
+    });
 });

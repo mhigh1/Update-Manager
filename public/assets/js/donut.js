@@ -44,8 +44,11 @@
         `
     };
 
+    // Get the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+
     // Chart 1 - Device Group
-    $.get('/api/devices/updates').then(function(data) {
+    $.get(`/api/devices/updates?measure=true&targetGroupID=${urlParams.get('targetGroupID')}`).then(function(data) {
         
         const labels = ["INSTALLED", "NEEDED", "DOWNLOADED", "PENDING", "FAILED", "STATUS UNKNOWN"];
         let legend = "";  
@@ -120,7 +123,7 @@
     });
 
     // Chart 3 - Devices.hbs
-    $.get('/api/devices/updates').then(function(data) {
+    $.get('/api/devices/updates?measure=true').then(function(data) {
             
         const labels = ["INSTALLED", "NEEDED", "DOWNLOADED", "PENDING", "FAILED", "STATUS UNKNOWN"];
         let legend = "";  

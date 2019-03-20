@@ -6,7 +6,8 @@
 <div class="container-fluid fill-parent" style="overflow-y: auto;">
     <div class="row mt-3 mb-2">
         <div class="col">
-            <h3 id="collectionName"></h3>
+            <h3 id="collectionName" class="mb-0"></h3>
+            <div id='collectionDesc' class="text-muted mb-2" style="font-size: .85rem"></div>
         </div>
     </div>      
     <div id="metrics" class="row mb-3">
@@ -32,10 +33,7 @@
                             <th>DEVICE COUNT</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Updates Failed</td>
-                                <td>153</td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -46,9 +44,7 @@
                 <div class="card-header card-title">Updates Status</div>
                 <div class="card-body d-flex">
                     <div id="chart1"></div>
-                    <div class="d-inline-block ml-3 legend">
-                        
-                    </div>
+                    <div class="d-inline-block ml-3 legend"></div>
                 </div>
             </div>
         </div>
@@ -64,7 +60,6 @@
                         <thead style="font-size: .8rem">
                             <th>HOSTNAME</th>
                             <th>OS</th>
-                            <th>BUSINESS</th>
                             <th width="60px">INSTALLED</th>
                             <th width="60px">NEEDED</th>
                             <th width="60px">DOWNLOADED</th>
@@ -72,19 +67,7 @@
                             <th width="60px">FAILED</th>
                             <th width="60px">UNKNOWN</th>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>CTS2012R2D1</td>
-                                <td>Windows Server 2012 R2</td>
-                                <td>GE Digital</td>
-                                <td>50</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>22</td>
-                                <td>5</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
@@ -94,8 +77,8 @@
 
 {{#section 'scripts'}}
     <script type="text/javascript" src="/assets/js/DataTables/datatables.min.js"></script>
-    <script type="text/javascript" src="/assets/js/deviceGroup.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script type="text/javascript" src="/assets/js/donut.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="/assets/js/donutMod.js"></script>
+    <script type="text/javascript" src="/assets/js/donut.js"></script>
+    <script type="text/javascript" src="/assets/js/deviceGroup.js"></script>    
 {{/section}}
