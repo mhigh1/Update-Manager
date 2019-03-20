@@ -90,6 +90,18 @@ let devices;
 // Get the URL parameters
 const urlParams = new URLSearchParams(window.location.search);
 
+
+// Needs Attention table row template
+const tmplCardNeedsAttentionRow = function(label, value) {
+    return `
+        <tr>
+            <td>${label}</td>
+            <td>${value}</td>
+        </tr>
+    `
+};
+
+
 // Get Device Group from API
 $.get(`/api/devices/group/${urlParams.get('targetGroupID')}`).then(function(data) {
     deviceCollection = data;
@@ -101,8 +113,27 @@ $.get(`/api/devices/group/${urlParams.get('targetGroupID')}`).then(function(data
 });
 
 // Get Devices in Target Group
-$.get(`/api/devices/devices?targetGroupId=${urlParams.get('targetGroupID')}`).then(function(data) {
+$.get(`/api/devices/devices?targetGroupID=${urlParams.get('targetGroupID')}`).then(function(data) {
     devices = data;
+});
+$.get(`/api/devices/updates?targetGroupID=${urlParams.get('targetGroupID')}`).then(function(data) {
+    const updateStatusByDevice = data;
+    
+    const attentionStates = [
+        {label: 'Reboot Required', state: 6},
+        {label: 'Updates Failed', state: 5}
+    ];
+
+    attentionStates.forEach(item => {
+        let value = updateStatusByDevice.filter(device => device.state === item.state).map(device => device.deviceID).filter((value, index, self) => self.indexOf(value) === index).length;
+        $("#tblAttentionNeeded tbody").append(tmplCardNeedsAttentionRow(item.label, value));
+    });
+    
+    needsAttentionCount = updateStatusByDevice.filter(device => device.state === 5 || device.state === 6)
+        .map(device => device.deviceID)
+        .filter((value, index, self) => self.indexOf(value) === index).length;
+
+    $('#attentionNeeded').text(needsAttentionCount);
 });
 
 // Document Ready
@@ -110,7 +141,7 @@ $(document).ready(function() {
 
     // Render the left-panel naviation
     $("#left-panel").html(tmplSideNav());
-    
+
     // Apply the DataTables UI
     $('#devices').DataTable({
         "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],

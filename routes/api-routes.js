@@ -80,6 +80,27 @@ module.exports = function(app) {
             }).catch(function(error) {
                 res.json({error: error});
             });
+        } else if(req.query.targetGroupID) {
+            db.tblUpdateStatusPerDevice.findAll({
+                attributes: [
+                    'deviceID',
+                    'state', 
+                    [db.sequelize.fn('COUNT', db.sequelize.col('state')), 'count']
+                ],
+                group: ['deviceID','state'],
+                order: [['deviceID','ASC'],['state','ASC']],
+                include: [{
+                    model: db.tblDevices,
+                    attributes: [],
+                    where: {
+                        targetGroupID: req.query.targetGroupID
+                    }
+                }]
+            }).then(function(data) {
+                res.json(data);
+            }).catch(function(error) {
+                res.json({error: error});
+            });
         } else {
             db.tblUpdateStatusPerDevice.findAll({
                 where: req.query
