@@ -1,15 +1,7 @@
-const colors = [
-    "#000000",
-    "#dddddd",
-    "#ff8c00",
-    "#28B9F5", 
-    "#009e49", 
-    "#e81123", 
-    "#512bd4"
-];
 
 
-function donutChart() {
+
+function donutChart(colors) {
     var width,
         height,
         margin = {top: 0, right: 0, bottom: 0, left: 0},
