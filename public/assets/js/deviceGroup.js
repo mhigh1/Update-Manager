@@ -101,6 +101,20 @@ const tmplCardNeedsAttentionRow = function(label, value) {
     `
 };
 
+const tmplTableRows = function(id, hostname, os, installed, needed, downloaded, pending, failed, unknown) {
+    return `
+        <tr>
+            <td><a href="/device?id=${id}">${hostname}</a></td>
+            <td>${os}</td>
+            <td>${installed}</td>
+            <td>${needed}</td>
+            <td>${downloaded}</td>
+            <td>${pending}</td>
+            <td>${failed}</td>
+            <td>${unknown}</td>
+        </tr>
+    `
+}
 
 // Get Device Group from API
 $.get(`/api/devices/group/${urlParams.get('targetGroupID')}`).then(function(data) {
@@ -142,11 +156,21 @@ $(document).ready(function() {
     // Render the left-panel naviation
     $("#left-panel").html(tmplSideNav());
 
-    // Apply the DataTables UI
-    $('#devices').DataTable({
-        "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
-        "language": {
-            "search": "Filter:"
-          }
+    $.get(`/api/devices/updates/group/${urlParams.get('targetGroupID')}`).then(function(data) {
+        let content = "";
+
+        data.forEach(device => {
+            content += tmplTableRows(device.DeviceID, device.hostName, device.OS, device.Installed, device.Needed, device.Downloaded, device.PendingReboot, device.Failed, device.Unknown);
+        });
+
+        $('#devices tbody').html(content);
+        
+        // Apply the DataTables UI
+        $('#devices').DataTable({
+            "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+            "language": {
+                "search": "Filter:"
+            }
+        });
     });
 });
