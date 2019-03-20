@@ -1,0 +1,205 @@
+/* Header Parallax Element Style*/
+.paral {
+  min-height: 600px; 
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* Paragrapgh for Parallax Section */
+.paral p {
+  font-size: 24px;
+  /* color:rgb(255, 255, 255); */
+  text-align: center;
+  line-height: 40px;
+}
+
+/* Heading for Parallax Section */
+.paral h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 60px;
+  text-align: center;
+  padding-top: 60px;
+  line-height: 100px;
+}
+
+/* Image for Parallax Section */
+.paralsec {
+  background-image: url("https://cdn.ttgtmedia.com/visuals/searchWindowsServer/server_management/windowsserver_article_012.jpg");
+}
+
+.paralsec1 {
+  background-image: url("https://media.threatpost.com/wp-content/uploads/sites/103/2015/02/07005737/patchtues1.jpg");
+}
+
+.collage{
+  margin-top: 10%;
+  margin-bottom: 12%;
+  margin-left: 3%;
+}
+
+#imgstyle1{
+  /* Rotate div */
+  transform:rotate(7deg);
+  -ms-transform:rotate(7deg); /* Internet Explorer */
+  -moz-transform:rotate(7deg); /* Firefox */
+  -webkit-transform:rotate(7deg); /* Safari and Chrome */
+  -o-transform:rotate(7deg); /* Opera */
+}
+
+#imgstyle2 {
+/* Rotate div */
+  transform:rotate(-7deg);
+  -ms-transform:rotate(-7deg); /* Internet Explorer */
+  -moz-transform:rotate(-7deg); /* Firefox */
+  -webkit-transform:rotate(-7deg); /* Safari and Chrome */
+  -o-transform:rotate(-7deg); /* Opera */
+}
+
+.paralsec2 {
+  background-image: url("https://cdn-images-1.medium.com/max/800/1*qAnbnC9iMZqBEQqwACeqUg.png");     
+}
+
+.paralsec2 p {
+  font-size: 16px;
+  /* color:rgb(255, 255, 255); */
+  text-align: center;
+  line-height: 22px;
+}
+
+/* Remove Bottom Margin from Jumbotron */
+.jumbotron {
+  margin-bottom: 0;
+  
+}
+
+#innerJumbo {
+  background-color: rgb(206, 233, 233);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  /* font-size: 24px; */
+  color:rgb(15, 57, 146);
+  text-align: center;
+  border-color: darkgray;
+  border-style: outset;
+  opacity: 0.8;
+  /* line-height: 40px; */
+}
+
+#team {
+  /* background: url("https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/1546620059/new-york-style-cheesecake-with-pink-grapefruit-and-marmalade-xl-RECIPE0219.jpg?itok=mTzLYoHf") no-repeat center center fixed; */
+  padding: 60px 0;
+  text-align: center;
+  background-size: cover;
+}
+
+#team hr {
+  display: block;
+  height: 3px;
+  border: 0;
+  margin: 3em 0;
+  padding: 0;
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+  width: 100%;
+  border: none;
+}
+
+#team H2 {
+  color: #fff;
+}
+
+#team p {
+  color:rgb(15, 57, 146);
+}
+#team H4 {
+  padding-top: 10px;
+  color:rgb(15, 57, 146);
+  font-weight:bold;
+}
+
+#team p.large {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+#team .fab {
+  width: 30px;
+}
+
+.teamborder {
+  border: 1px solid lightgray;
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+.img {
+  border-radius: 50%;
+}
+
+/* Footer */
+.wn-footer {
+  padding: 1rem 0;
+  text-align: center;
+  color: white;
+  background-color: lightgrey;
+  border-top: .05rem solid #e5e5e5;
+}
+
+.wn-footer a {
+  color: gray;
+}
+
+
+/* Sized for screens up to 1440 pxels. */
+@media screen and (max-width: 1440px) {
+  #imgstyle1{
+    height: 200px; 
+    width: 200px;
+    }
+    #imgstyle2{
+      height: 200px; 
+      width: 200px;
+      }
+  }
+
+ /* Sized for screens up to 1072 pxels. */
+@media screen and (max-width: 1072px) {
+  #imgstyle1{
+    height: 145px; 
+    width: 145px;
+    }
+    #imgstyle2{
+      height: 145px; 
+      width: 145px;
+      }
+  }
+
+  /* Sized for screens up to 1000 pxels. */
+  @media screen and (max-width: 1000px) {
+
+    #imgstyle1{
+    height: 50; 
+    width: 50;
+    }
+    #imgstyle2{
+      height: 50; 
+      width: 50;
+      }
+  }
+
+/* Sized for screens up to 450 pxels. */
+  @media screen and (max-width: 450px) {
+    #imgstyle1{
+    height: 45px; 
+    width: 45px;
+    }
+    #imgstyle2{
+      height: 45px; 
+      width: 45px;
+      }
+  }
+
