@@ -45,6 +45,23 @@ module.exports = function(app) {
         });
     });
 
+
+   app.get('/api/devices/updates', function(req, res) {
+        db.tblUpdateStatusPerDevice.findAll({
+            attributes: [
+                'state', 
+                [db.sequelize.fn('COUNT', db.sequelize.col('state')), 'count']
+            ],
+            group: ['state'],
+            order: [['state','ASC']]
+        }).then(function(data) {
+            res.json(data);
+        }).catch(function(error) {
+            res.json({error: error});
+        });
+    });
+    
+
 /* -------------Device details--------------- */
 app.get('/api/devices/details', function(req, res) {
     db.tblDeviceDetails.findAll({
