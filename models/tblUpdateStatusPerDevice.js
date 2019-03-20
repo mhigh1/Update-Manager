@@ -27,6 +27,10 @@ module.exports = function (connection, Sequelize) {
         timestamps: false
     });
     
+    // Associations
+    tblUpdateStatusPerDevice.associate = function(models) {
+        tblUpdateStatusPerDevice.belongsTo(models.tblDevices, {foreignKey: 'deviceID'});
+    }
     return tblUpdateStatusPerDevice;
 }
 

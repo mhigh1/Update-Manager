@@ -26,7 +26,16 @@ module.exports = function(app) {
         db.tblDeviceGroups.findOne({
             where: {
                 targetGroupID: req.params.id
-            }
+            },
+            attributes: [
+                'name', 'description', 'targetGroupID', 'parentGroupID', 'isBuiltin',
+                [db.sequelize.fn('COUNT', db.sequelize.col('tblDevices.deviceID')), 'deviceCount']
+            ],
+            include: [{
+            model: db.tblDevices,
+            required: false,
+            attributes: []
+            }]
         }).then(function(data) {
             res.json(data);
         }).catch(function(error) {
@@ -47,18 +56,39 @@ module.exports = function(app) {
 
 
    app.get('/api/devices/updates', function(req, res) {
-        db.tblUpdateStatusPerDevice.findAll({
-            attributes: [
-                'state', 
-                [db.sequelize.fn('COUNT', db.sequelize.col('state')), 'count']
-            ],
-            group: ['state'],
-            order: [['state','ASC']]
-        }).then(function(data) {
-            res.json(data);
-        }).catch(function(error) {
-            res.json({error: error});
-        });
+        if(req.query.measure === 'true') {
+            let include = [];
+            if(req.query.targetGroupID) {
+                include = [{
+                    model: db.tblDevices,
+                    attributes: [],
+                    where: {
+                        targetGroupID: req.query.targetGroupID
+                    }
+                }];
+            };
+            db.tblUpdateStatusPerDevice.findAll({
+                attributes: [
+                    'state', 
+                    [db.sequelize.fn('COUNT', db.sequelize.col('state')), 'count']
+                ],
+                group: ['state'],
+                order: [['state','ASC']],
+                include: include               
+            }).then(function(data) {
+                res.json(data);
+            }).catch(function(error) {
+                res.json({error: error});
+            });
+        } else {
+            db.tblUpdateStatusPerDevice.findAll({
+                where: req.query
+            }).then(function(data) {
+                res.json(data);
+            }).catch(function(error) {
+                res.json({error: error});
+            });
+        }
     });
     
 

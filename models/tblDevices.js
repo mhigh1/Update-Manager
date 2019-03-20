@@ -95,6 +95,7 @@ module.exports = function (connection, Sequelize) {
         tblDevices.hasOne(models.tblDeviceDetails, {foreignKey: 'deviceID'});
         tblDevices.belongsTo(models.tblDowstreamServers, {foreignKey: 'parentServerID'});
         tblDevices.belongsTo(models.tblDeviceGroups, {foreignKey: 'targetGroupID'});
+        tblDevices.hasMany(models.tblUpdateStatusPerDevice, {foreignKey: 'deviceID'});
     }
 
     return tblDevices;

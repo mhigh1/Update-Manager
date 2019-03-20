@@ -1,8 +1,5 @@
 // Used by deviceGroup.hbs //
 
-// SAMPLE DATA
-
-
 // SideNav -- Default Menu
 const tmplSideNav = () => {
     return `
@@ -86,38 +83,39 @@ const tmplSideNav = () => {
     `;
 }
 
+// Declare variables
+let deviceCollection;
+let devices;
+
+// Get the URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+// Get Device Group from API
+$.get(`/api/devices/group/${urlParams.get('targetGroupID')}`).then(function(data) {
+    deviceCollection = data;
+        
+    // Render Device Collection Overview
+    $('#collectionName').text(deviceCollection.name);
+    $('#collectionDesc').text(deviceCollection.description);
+    $('#deviceCount').text(deviceCollection.deviceCount);
+});
+
+// Get Devices in Target Group
+$.get(`/api/devices/devices?targetGroupId=${urlParams.get('targetGroupID')}`).then(function(data) {
+    devices = data;
+});
+
 // Document Ready
 $(document).ready(function() {
 
-    // Get the URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // Get device group from URL
-    $.get(`/api/deviceCollection/${urlParams.get('collectionId')}`)
-    .then(function(data) {
-        console.log(data);
-        $('#collectionName').text(data.Name);
-
-        // Get all devices with the device group
-        $.get(`/api/devices?collectionId=${urlParams.get('collectionId')}`)
-        .then(function(data) {
-            console.log(data);
-            
-            $('#deviceCount').text(data.length);
-        });
-    });
-
+    // Render the left-panel naviation
+    $("#left-panel").html(tmplSideNav());
     
-
-
-
+    // Apply the DataTables UI
     $('#devices').DataTable({
         "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
         "language": {
             "search": "Filter:"
           }
     });
-
-    // Render the left-panel naviation
-    $("#left-panel").html(tmplSideNav());
 });
