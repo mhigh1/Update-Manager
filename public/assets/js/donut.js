@@ -25,6 +25,15 @@
             .variable('count')
             .category('state');
 
+            const colorsDev = ["#28B9F5","#009e49"];
+            var donutDev = donutChart(colorsDev)
+            .width(200)
+            .height(180)
+            .cornerRadius(3) // sets how rounded the corners are on each slice
+            .padAngle(0.015) // effectively dictates the gap between slices
+            .variable('count')
+            .category('state');
+
 
     // Calling Datasets for each Donut
     // Helper function that invokes building the d3 svg element
@@ -59,32 +68,62 @@
             switch(item){
                 case "INSTALLED": 
                 hexColor = "#009e49";
-                value = data.find((obj) => obj.state === 4).count;
+                value = data.find((obj) => obj.state === 4);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "NEEDED": 
                 hexColor = "#ff8c00";
-                value = data.find((obj) => obj.state === 2).count;
+                value = data.find((obj) => obj.state === 2);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "DOWNLOADED": 
                 hexColor = "#28B9F5";
-                value = data.find((obj) => obj.state === 3).count;
+                value = data.find((obj) => obj.state === 3);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "PENDING": 
                 hexColor = "#512bd4";
-                value = data.find((obj) => obj.state === 6).count;
+                value = data.find((obj) => obj.state === 6);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "FAILED": 
                 hexColor = "#e81123";
-                value = data.find((obj) => obj.state === 5).count;
+                value = data.find((obj) => obj.state === 5);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "STATUS UNKNOWN": 
                 hexColor = "#000000";
-                value = data.find((obj) => obj.state === 0).count;
+                value = data.find((obj) => obj.state === 0);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
             }
 
@@ -134,32 +173,62 @@
             switch(item){
                 case "INSTALLED": 
                 hexColor = "#009e49";
-                value = data.find((obj) => obj.state === 4).count;
+                value = data.find((obj) => obj.state === 4);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "NEEDED": 
                 hexColor = "#ff8c00";
-                value = data.find((obj) => obj.state === 2).count;
+                value = data.find((obj) => obj.state === 2);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "DOWNLOADED": 
                 hexColor = "#28B9F5";
-                value = data.find((obj) => obj.state === 3).count;
+                value = data.find((obj) => obj.state === 3);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "PENDING": 
                 hexColor = "#512bd4";
-                value = data.find((obj) => obj.state === 6).count;
+                value = data.find((obj) => obj.state === 6);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
                 break;
 
                 case "FAILED": 
                 hexColor = "#e81123";
-                value = data.find((obj) => obj.state === 5).count;
+                value = data.find((obj) => obj.state === 5)
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                };
                 break;
 
                 case "STATUS UNKNOWN": 
                 hexColor = "#000000";
-                value = data.find((obj) => obj.state === 0).count;
+                value = data.find((obj) => obj.state === 0)
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                };
                 break;
             }
             
@@ -168,6 +237,85 @@
 
         buildChart("#cardUpdateSummary div.d3Chart", data, donutUpdatesSum);
         $("#cardUpdateSummary div.d3Legend").html(legend);
+
+    });
+
+    // Chart 4 - device.hbs
+    $.get(`/api/devices/updates?measure=true&deviceID=${urlParams.get('id')}`).then(function(data) {
+                
+        const labels = ["INSTALLED", "NEEDED", "DOWNLOADED", "PENDING", "FAILED", "STATUS UNKNOWN"];
+        let legend = "";  
+        let hexColor = "";
+        let value = ""; 
+        
+        labels.forEach(item => {
+            switch(item){
+                case "INSTALLED": 
+                hexColor = "#009e49";
+                value = data.find((obj) => obj.state === 4);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
+                break;
+
+                case "NEEDED": 
+                hexColor = "#ff8c00";
+                value = data.find((obj) => obj.state === 2);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
+                break;
+
+                case "DOWNLOADED": 
+                hexColor = "#28B9F5";
+                value = data.find((obj) => obj.state === 3);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
+                break;
+
+                case "PENDING": 
+                hexColor = "#512bd4";
+                value = data.find((obj) => obj.state === 6);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
+                break;
+
+                case "FAILED": 
+                hexColor = "#e81123";
+                value = data.find((obj) => obj.state === 5);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
+                break;
+
+                case "STATUS UNKNOWN": 
+                hexColor = "#000000";
+                value = data.find((obj) => obj.state === 0);
+                if (value) {
+                    value = value.count;
+                } else {
+                    value = 0;
+                }
+                break;
+            }
+            
+            legend += tmplLegendEntry(hexColor, item, value);
+        });
+
+        buildChart("#cardDevUpdateSummary div.d3Chart", data, donutDev);
+        $("#cardDevUpdateSummary div.d3Legend").html(legend);
 
     });
 });
