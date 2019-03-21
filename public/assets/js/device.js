@@ -1,4 +1,3 @@
-
 // SideNav -- Default Menu
 const tmplSideNav = () => {
     return `
@@ -82,13 +81,11 @@ const tmplSideNav = () => {
     `;
 }
 
-
-
 $(document).ready(function() {
     
     // Render the left-panel naviation
     $("#left-panel").html(tmplSideNav());
-    
+
     $('table#updates').DataTable({
         "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
         "language": {

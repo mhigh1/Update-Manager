@@ -67,6 +67,15 @@ module.exports = function(app) {
                     }
                 }];
             };
+            if(req.query.deviceID) {
+                include = [{
+                    model: db.tblDevices,
+                    attributes: [],
+                    where: {
+                        deviceID: req.query.deviceID
+                    }
+                }];
+            };
             db.tblUpdateStatusPerDevice.findAll({
                 attributes: [
                     'state', 
@@ -145,7 +154,6 @@ module.exports = function(app) {
                 res.json({error: error});
             });
     });
-    
 
 /* -------------Device details--------------- */
 app.get('/api/devices/details', function(req, res) {
