@@ -1,6 +1,7 @@
 // TEMP DATA
 const sampleData = [
     {
+        id: 17,
         hostname: "CTS2012R2D1",
         manufacturer: "VMware, Inc",
         osName: "Windows Server 2012 R2",
@@ -8,7 +9,8 @@ const sampleData = [
         osImgUrl: "/assets/images/microsoft_200x200.png"
     },
     {
-        hostname: "RHEL20101781",
+        id: 2,
+        hostname: "TESTRHEL7",
         manufacturer: "VMware, Inc",
         osName: "Red Hat Enterprise Linux",
         assetNo: "1002520657",
@@ -18,11 +20,11 @@ const sampleData = [
 
 
 // Template for Device Card
-const tmplDeviceCard = (hostname, manufacturer, osName, assetNo, osImgUrl) => {
+const tmplDeviceCard = (id, hostname, manufacturer, osName, assetNo, osImgUrl) => {
     return `
         <div class="card">
             <div class="card-header bg-white">
-                <a href="#">${hostname}</a>
+                <a href="/device?id=${id}">${hostname}</a>
                 <div>
                     <span class="text-muted">${manufacturer}</span>
                 </div>
@@ -126,7 +128,7 @@ $(document).ready(function() {
 
     // Foreach record in array add a device card
     sampleData.forEach(el => {
-        $("#deviceCards").append(tmplDeviceCard(el.hostname, el.manufacturer, el.osName, el.assetNo, el.osImgUrl));
+        $("#deviceCards").append(tmplDeviceCard(el.id, el.hostname, el.manufacturer, el.osName, el.assetNo, el.osImgUrl));
     });
 
     // Add device count from array
